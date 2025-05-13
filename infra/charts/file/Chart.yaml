@@ -1,0 +1,4 @@
+apiVersion: v2
+name: file
+version: 0.1.0
+description: Helm chart for the filedepot file service

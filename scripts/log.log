@@ -1,0 +1,8 @@
+INFO:     Started server process [49185]
+2025-05-13 12:58:37,316 INFO Started server process [49185] [trace_id=- span_id=-]
+INFO:     Waiting for application startup.
+2025-05-13 12:58:37,316 INFO Waiting for application startup. [trace_id=- span_id=-]
+INFO:     Application startup complete.
+2025-05-13 12:58:37,317 INFO Application startup complete. [trace_id=- span_id=-]
+INFO:     Uvicorn running on http://0.0.0.0:8003 (Press CTRL+C to quit)
+2025-05-13 12:58:37,323 INFO Uvicorn running on http://0.0.0.0:8003 (Press CTRL+C to quit) [trace_id=- span_id=-]

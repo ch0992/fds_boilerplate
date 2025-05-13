@@ -1,0 +1,9 @@
+2025-05-13 12:58:37,339 WARNING Overriding of current TracerProvider is not allowed [trace_id=- span_id=-]
+INFO:     Started server process [49184]
+2025-05-13 12:58:37,342 INFO Started server process [49184] [trace_id=- span_id=-]
+INFO:     Waiting for application startup.
+2025-05-13 12:58:37,342 INFO Waiting for application startup. [trace_id=- span_id=-]
+INFO:     Application startup complete.
+2025-05-13 12:58:37,342 INFO Application startup complete. [trace_id=- span_id=-]
+INFO:     Uvicorn running on http://0.0.0.0:8002 (Press CTRL+C to quit)
+2025-05-13 12:58:37,343 INFO Uvicorn running on http://0.0.0.0:8002 (Press CTRL+C to quit) [trace_id=- span_id=-]

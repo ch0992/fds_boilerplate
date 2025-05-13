@@ -1,0 +1,12 @@
+replicaCount: 1
+image:
+  repository: filedepot-data
+  tag: local
+  pullPolicy: IfNotPresent
+service:
+  type: ClusterIP
+  port: 8002
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}

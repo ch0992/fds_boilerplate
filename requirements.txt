@@ -1,0 +1,22 @@
+fastapi
+uvicorn
+httpx
+pydantic
+pytest
+pytest-asyncio
+python-dotenv
+logging
+opentelemetry-api
+opentelemetry-sdk
+opentelemetry-exporter-otlp
+sentry-sdk
+opentelemetry-instrumentation
+opentelemetry-instrumentation-fastapi
+faststream[kafka]
+python-multipart
+aiofiles
+boto3
+
+# --- Dev only ---
+# Lint/Static Analysis (CI/CD 및 개발 환경에서만 사용)
+ruff

@@ -1,0 +1,93 @@
+2025-05-13 12:58:37,448 WARNING Overriding of current TracerProvider is not allowed [trace_id=- span_id=-]
+INFO:     Started server process [49182]
+2025-05-13 12:58:37,453 INFO Started server process [49182] [trace_id=- span_id=-]
+INFO:     Waiting for application startup.
+2025-05-13 12:58:37,454 INFO Waiting for application startup. [trace_id=- span_id=-]
+2025-05-13 12:58:37,454 INFO Gateway service started. [trace_id=- span_id=-]
+2025-05-13 12:58:37,454 INFO [gateway] AUTH_MODE=local [trace_id=- span_id=-]
+2025-05-13 12:58:37,454 INFO [gateway] AUTH_LOCAL_TOKEN=dev-token [trace_id=- span_id=-]
+INFO:     Application startup complete.
+2025-05-13 12:58:37,454 INFO Application startup complete. [trace_id=- span_id=-]
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-05-13 12:58:37,454 INFO Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit) [trace_id=- span_id=-]
+2025-05-13 12:58:40,172 INFO [access] GET /gateway/docs [trace_id=0xe1e3f5f62896f47d6d3e0d048fd3f31c span_id=0x34c269b8081ff290]
+/gateway/openapi.json {'HEAD', 'GET'}
+/gateway/docs {'HEAD', 'GET'}
+/docs/oauth2-redirect {'HEAD', 'GET'}
+/gateway/redoc {'HEAD', 'GET'}
+/gateway/auth/imgplt/auths {'GET'}
+/gateway/file/imgplt/sqls {'GET'}
+/gateway/file/imgplt/s3/{file_path:path} {'GET'}
+/gateway/file/imgplt/zips {'GET'}
+/gateway/file/topics/{topic} {'POST'}
+/gateway/file/imgplt/aliases {'GET'}
+/gateway/file/upload/file-meta/{topic} {'POST'}
+/gateway/data/topics {'GET'}
+/gateway/data/topics/{table} {'POST'}
+/gateway/data/imgplt/curs {'POST'}
+/gateway/data/imgplt/sqls {'POST'}
+/gateway/log/event {'POST'}
+/gateway/imgplt/log-test {'GET'}
+/gateway/imgplt/test-trace {'GET'}
+/gateway/data/imgplt/curs {'POST'}
+/gateway/ping {'GET'}
+/gateway/file/ping {'GET'}
+/gateway/data/ping {'GET'}
+/gateway/log/ping {'GET'}
+INFO:     127.0.0.1:64321 - "GET /gateway/docs HTTP/1.1" 200 OK
+2025-05-13 12:58:40,920 INFO [access] GET /gateway/openapi.json [trace_id=0xc48d876b20c9b20380bcfc8d56cbf3be span_id=0x38dde54d5eb7da11]
+INFO:     127.0.0.1:64321 - "GET /gateway/openapi.json HTTP/1.1" 200 OK
+{
+    "name": "HTTP GET /gateway/docs",
+    "context": {
+        "trace_id": "0xe1e3f5f62896f47d6d3e0d048fd3f31c",
+        "span_id": "0x34c269b8081ff290",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T03:58:40.172001Z",
+    "end_time": "2025-05-13T03:58:40.172372Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /gateway/openapi.json",
+    "context": {
+        "trace_id": "0xc48d876b20c9b20380bcfc8d56cbf3be",
+        "span_id": "0x38dde54d5eb7da11",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T03:58:40.920078Z",
+    "end_time": "2025-05-13T03:58:40.932134Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
