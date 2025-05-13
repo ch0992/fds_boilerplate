@@ -1,5 +1,7 @@
 # filedepot Boilerplate
 
+---
+
 ## 아키텍처 및 구조
 
 - **모놀리식처럼 개발, 마이크로서비스처럼 배포**
@@ -44,7 +46,33 @@
 
 
 
-## 실행 방법
+## 🚀 로컬 개발 환경 준비
+
+```bash
+# 1. Python 3.12+ 설치 (권장: pyenv, conda 등 사용)
+# 2. 패키지 설치 (uv 빠른 설치 권장)
+pip install uv
+uv pip install --system -r requirements.txt
+# 또는
+pip install -r requirements.txt
+```
+- `.env` 파일을 복사/수정하여 환경변수 설정
+
+## 🛠️ VSCode 추천 확장 프로그램
+
+| 확장 프로그램          | 설명                                 | 필수/권장 |
+|-----------------------|--------------------------------------|----------|
+| Python                | Python 개발 및 디버깅                | 필수     |
+| Pylance               | 빠른 타입체크, 코드 완성             | 필수     |
+| REST Client           | HTTP API 테스트 자동화                | 권장     |
+| dotenv                | .env 파일 문법 하이라이트             | 권장     |
+| Docker                | Dockerfile, Compose 관리              | 권장     |
+| YAML                  | yaml 파일 작성 지원                   | 권장     |
+| GitLens               | git 변경 이력, blame 시각화           | 권장     |
+
+- VSCode 좌측 Extensions(확장) 탭에서 검색/설치
+
+## 실행 방법 (로컬)
 
 ```bash
 # 모든 서비스(8000~8003) 로컬 실행
