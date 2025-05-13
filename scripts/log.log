@@ -1,8 +1,9 @@
-INFO:     Started server process [63739]
-2025-05-13 14:48:56,208 INFO Started server process [63739] [trace_id=- span_id=-]
+[32m2025-05-13 17:33:22.528[0m | [1mINFO    [0m | [36mapp.common.logging[0m:[36msetup_logging[0m:[36m19[0m - [1mLoguru logging is configured.[0m
+INFO:     Started server process [15322]
+2025-05-13 17:33:22,535 INFO Started server process [15322] [trace_id=- span_id=-]
 INFO:     Waiting for application startup.
-2025-05-13 14:48:56,208 INFO Waiting for application startup. [trace_id=- span_id=-]
+2025-05-13 17:33:22,535 INFO Waiting for application startup. [trace_id=- span_id=-]
 INFO:     Application startup complete.
-2025-05-13 14:48:56,208 INFO Application startup complete. [trace_id=- span_id=-]
+2025-05-13 17:33:22,535 INFO Application startup complete. [trace_id=- span_id=-]
 INFO:     Uvicorn running on http://0.0.0.0:8003 (Press CTRL+C to quit)
-2025-05-13 14:48:56,209 INFO Uvicorn running on http://0.0.0.0:8003 (Press CTRL+C to quit) [trace_id=- span_id=-]
+2025-05-13 17:33:22,536 INFO Uvicorn running on http://0.0.0.0:8003 (Press CTRL+C to quit) [trace_id=- span_id=-]

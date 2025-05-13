@@ -1,0 +1,7 @@
+{
+  "filename": "string",
+  "status": "string",
+  "location": "",
+  "error": "",
+  "kafka_result": {}
+}
