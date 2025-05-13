@@ -1,9 +1,9 @@
 """
 app/common/logging.py
-공통 로깅 설정 (core에서 이동)
+공통 로깅 설정
 """
 
-import logging
+from loguru import logger
 from functools import wraps
 from opentelemetry import trace
 from opentelemetry.trace import Tracer
@@ -13,14 +13,16 @@ import traceback
 
 
 def setup_logging():
-    logging.basicConfig(level=logging.INFO)
-    logging.info("Logging is configured.")
+    logger.remove()
+    logger.add(sys.stdout, level="INFO", colorize=True, backtrace=True, diagnose=True)
+    logger.add("logs/app.log", rotation="10 MB", retention="7 days", compression="zip")
+    logger.info("Loguru logging is configured.")
 
 def get_tracer(service_name: str = "default") -> Tracer:
     try:
         return trace.get_tracer(service_name)
     except Exception:
-        logging.warning("OpenTelemetry tracer unavailable, returning dummy tracer.")
+        logger.warning("OpenTelemetry tracer unavailable, returning dummy tracer.")
         class DummySpan:
             def __enter__(self): return self
             def __exit__(self, exc_type, exc_val, exc_tb): pass
@@ -36,8 +38,7 @@ def capture_and_log(func):
         try:
             return await func(*args, **kwargs)
         except Exception as e:
-            logging.error(f"Exception in {func.__name__}: {e}")
-            traceback.print_exc()
+            logger.exception(f"Exception in {func.__name__}: {e}")
             sentry_sdk.capture_exception(e)
             raise
     return wrapper

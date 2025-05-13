@@ -15,12 +15,12 @@ from app.domains.file.schemas.upload import UploadResponse
 import aiofiles
 import uuid
 import os
-import logging
 from app.common.config import settings
 from app.domains.file.services.impl.minio_memory_client import MinioMemoryClient
 from app.domains.file.services.impl.minio_prod_client import MinioProdClient
 
-logger = logging.getLogger("file-upload")
+from app.common.logging import logger
+from app.common.kafka.producer import KafkaMessageProducer
 
 class UploaderService(UploaderInterface):
     async def upload_file(self, file: UploadFile):

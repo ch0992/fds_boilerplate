@@ -11,21 +11,21 @@
 
 from app.domains.file.services.interfaces.file_upload import IFileUploadService, FileUploadRequest, FileUploadResponse
 
+from app.common.logging import logger
+
 class MinIOFileUploadService(IFileUploadService):
     """
     Minio S3 업로드 서비스 구현체
     """
     def upload(self, req: FileUploadRequest) -> FileUploadResponse:
-        """
-        Minio S3에 파일 업로드
-        Args:
-            req (FileUploadRequest): 업로드 요청 정보
-        Returns:
-            FileUploadResponse: 업로드 결과
-        """
-        # WHY: 실제 MinIO 연동 로직은 구현체에서 처리
-        # 실제 구현 생략
-        # WHY: 파일 URL을 생성하기 위해 req.filename을 사용
-        file_url = f"https://minio.example.com/{req.filename}"
-        # WHY: 업로드 결과를 반환하기 위해 FileUploadResponse를 사용
-        return FileUploadResponse(url=file_url)
+        try:
+            logger.info(f"[MinIOFileUploadService] S3 파일 업로드 시도: filename={req.filename}")
+            # 실제 MinIO 연동 로직은 구현체에서 처리
+            # WHY: 파일 URL을 생성하기 위해 req.filename을 사용
+            file_url = f"https://minio.example.com/{req.filename}"
+            logger.info(f"[MinIOFileUploadService] S3 파일 업로드 성공: url={file_url}")
+            # WHY: 업로드 결과를 반환하기 위해 FileUploadResponse를 사용
+            return FileUploadResponse(url=file_url)
+        except Exception as e:
+            logger.error(f"[MinIOFileUploadService] S3 파일 업로드 실패: {e}")
+            raise

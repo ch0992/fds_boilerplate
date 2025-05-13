@@ -1,6 +1,6 @@
 from typing import Any, Optional
 from .sentry import capture_exception
-import logging
+from app.common.logging import logger
 from opentelemetry import trace
 
 class AppException(Exception):
@@ -17,7 +17,7 @@ class AppException(Exception):
             return hex(ctx.get_span_context().trace_id)
         return None
 
-def capture_and_log(exc: Exception, span, logger: logging.Logger = None, extra: dict = None):
+def capture_and_log(exc: Exception, span, logger_instance=None, extra: dict = None):
     try:
         trace_id = None
         try:
@@ -25,21 +25,21 @@ def capture_and_log(exc: Exception, span, logger: logging.Logger = None, extra: 
             if ctx and ctx.get_span_context().is_valid:
                 trace_id = hex(ctx.get_span_context().trace_id)
         except Exception as e:
-            if logger:
-                logger.warning(f"[capture_and_log] trace context unavailable: {e}")
+            if logger_instance:
+                logger_instance.warning(f"[capture_and_log] trace context unavailable: {e}")
         log_extra = extra or {}
         if trace_id:
             log_extra["trace_id"] = trace_id
-        if logger:
+        if logger_instance:
             try:
-                logger.error(f"Exception captured: {exc}", extra=log_extra)
+                logger_instance.error(f"Exception captured: {exc} | {log_extra}")
             except Exception as e:
                 print(f"[capture_and_log] logger error: {e}")
         try:
             capture_exception(exc)
         except Exception as e:
-            if logger:
-                logger.warning(f"[capture_and_log] sentry capture failed: {e}")
+            if logger_instance:
+                logger_instance.warning(f"[capture_and_log] sentry capture failed: {e}")
         if span is not None:
             if RECORD_EXCEPTION_EVENT:
                 span.record_exception(exc)

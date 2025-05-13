@@ -12,37 +12,29 @@
 from app.domains.file.services.interfaces.minio_client_interface import MinioClientInterface
 # 실제 환경에서는 minio/minio-py, boto3 등으로 구현
 
+from app.common.logging import logger
+
 class MinioProdClient(MinioClientInterface):
     """
     Minio S3 연동 운영 클라이언트 구현체
     """
     def upload_file(self, bucket: str, key: str, data: bytes) -> str:
-        """
-        실제 S3에 파일 업로드
-        Args:
-            bucket (str): S3 버킷명
-            key (str): S3 오브젝트 키
-            data (bytes): 업로드할 파일 데이터
-        Returns:
-            str: 업로드 결과 (S3/MinIO URL)
-        """
-        # WHY: 실제 S3 업로드 로직은 운영 환경에서만 사용
-        # TODO: 실제 MinIO/S3 연동 코드 구현
-        # 예시: minio_client.put_object(bucket, key, io.BytesIO(data), len(data))
-        # 반환: S3/MinIO URL
-        raise NotImplementedError("Production MinioClient not implemented.")
+        try:
+            logger.info(f"[MinioProdClient] S3 파일 업로드 시도: bucket={bucket}, key={key}, data_size={len(data)}")
+            # 실제 S3 업로드 로직은 운영 환경에서만 사용
+            # TODO: 실제 MinIO/S3 연동 코드 구현
+            raise NotImplementedError("Production MinioClient not implemented.")
+        except Exception as e:
+            logger.error(f"[MinioProdClient] S3 파일 업로드 실패: {e}")
+            raise
 
     def multipart_upload(self, file_path: str, bucket: str, key: str, chunk_size: int = 20*1024*1024) -> str:
-        """
-        실제 S3에 파일 멀티파트 업로드
-        Args:
-            file_path (str): 업로드할 파일 경로
-            bucket (str): S3 버킷명
-            key (str): S3 오브젝트 키
-            chunk_size (int): 멀티파트 업로드 청크 크기 (기본값: 20MB)
-        Returns:
-            str: 업로드 결과 (S3/MinIO URL)
-        """
-        # WHY: 실제 S3 멀티파트 업로드 로직은 운영 환경에서만 사용
-        # TODO: 실제 MinIO/S3 멀티파트 업로드 구현
-        raise NotImplementedError("Production MinioClient multipart not implemented.")
+        try:
+            logger.info(f"[MinioProdClient] S3 멀티파트 업로드 시도: file_path={file_path}, bucket={bucket}, key={key}, chunk_size={chunk_size}")
+            # 실제 S3 멀티파트 업로드 로직은 운영 환경에서만 사용
+            # TODO: 실제 MinIO/S3 멀티파트 업로드 구현
+            raise NotImplementedError("Production MinioClient multipart not implemented.")
+        except Exception as e:
+            logger.error(f"[MinioProdClient] S3 멀티파트 업로드 실패: {e}")
+            raise
+

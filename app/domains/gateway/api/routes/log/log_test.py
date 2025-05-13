@@ -1,11 +1,9 @@
 from fastapi import APIRouter, HTTPException, Header
 from app.domains.log.services.common.tracing import get_tracer
-import logging
 from app.common.config import settings
 from app.common.utils.auth_mode import get_auth_mode
 from typing import Optional
-    
-logger = logging.getLogger(__name__)
+from app.common.logging import logger
 tracer = get_tracer("gateway")
 
 router = APIRouter()
@@ -22,8 +20,8 @@ async def log_test(authorization: Optional[str] = Header(None, description="Bear
             logger.error("tracer is None!")
             raise HTTPException(status_code=500, detail="tracer is None!")
         with tracer.start_as_current_span("gateway::log_test"):
-            logger.info("✅ FileDepot log test executed!", extra={"service": "gateway", "log_module": "log_test", "user_id": "minwoo123"})
-            return {"status": "log emitted"}
+            logger.info("✅ FileDepot log test executed! | service=gateway | log_module=log_test | user_id=minwoo123")
+            return {"status": "log emitted"} 
     except Exception as e:
-        logger.exception("log_test API 예외 발생: %s", e)
+        logger.exception(f"log_test API 예외 발생: {e}")
         raise HTTPException(status_code=500, detail=f"Internal Error: {e}")

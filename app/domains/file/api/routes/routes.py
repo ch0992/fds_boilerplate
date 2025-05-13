@@ -1,7 +1,7 @@
 """
 파일 서비스 API 라우터
 """
-import logging
+from app.common.logging import logger
 from fastapi import APIRouter, Query, Path, Body, File, UploadFile, HTTPException
 from app.domains.file.schemas.aliases import AliasEntry
 from typing import List
@@ -20,7 +20,7 @@ router = APIRouter()
 @router.get("/ping", summary="Health check", tags=["Health"])
 async def ping():
     import logging
-    logging.info("[file] /ping called")
+    logger.info("[file] /ping called")
     return {"message": "pong"}
 
 @router.post(
@@ -115,8 +115,7 @@ async def produce_metadata_to_kafka(
     topic: str = Path(..., description="Kafka topic명"),
     body: FileMetadataRequest = Body(...)
 ):
-    import logging
-    logger = logging.getLogger("file-metadata-producer")
+    from app.common.logging import logger
     logger.info(f"[FILE] /topics/{topic} called with metadata: {body.dict()}")
     result = await metadata_producer_service.produce_metadata(topic, body)
     logger.info(f"[FILE] Kafka produce result: {result}")

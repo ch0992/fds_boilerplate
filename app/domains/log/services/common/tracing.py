@@ -1,5 +1,6 @@
 import os
 import logging
+from app.common.logging import logger
 from typing import Optional
 from opentelemetry import trace
 from opentelemetry.sdk.resources import Resource
@@ -42,14 +43,14 @@ def init_tracer(exporter_type: Optional[str] = None):
         _tracer_provider.add_span_processor(BatchSpanProcessor(exporter))
         trace.set_tracer_provider(_tracer_provider)
     except Exception as e:
-        logging.warning(f"[Tracing fallback] tracer init failed: {e}")
+        logger.warning(f"[Tracing fallback] tracer init failed: {e}")
         _tracer_provider = None
 
 # 서비스 main.py 등에서 init_tracer() 호출 필요
 try:
     init_tracer()
 except Exception as e:
-    logging.warning(f"[Tracing fallback] global tracer init failed: {e}")
+    logger.warning(f"[Tracing fallback] global tracer init failed: {e}")
 
 def get_tracer(service_name: Optional[str] = None):
     try:

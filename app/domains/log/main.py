@@ -3,7 +3,7 @@
 Swagger UI(/docs) 활성화, 환경설정 연동 예시 포함
 """
 import os
-import logging
+from app.common.logging import setup_logging
 from dotenv import load_dotenv
 from fastapi import FastAPI
 
@@ -12,16 +12,8 @@ from app.domains.log.services.common.middleware import install_exception_handler
 from app.domains.log.services.common.tracing import init_tracer
 from app.domains.log.services.common.sentry import init_sentry
 
-# 로그 파일 경로를 main.py 기준으로 log/log.log로 지정
-LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'log.log')
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s %(levelname)s %(message)s',
-    handlers=[
-        logging.FileHandler(LOG_PATH),
-        logging.StreamHandler()
-    ]
-)
+# loguru 기반 로깅 설정
+setup_logging()
 
 # .env 파일 로드 (상위 루트 기준)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))

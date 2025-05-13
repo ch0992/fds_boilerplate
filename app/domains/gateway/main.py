@@ -6,18 +6,10 @@ import os
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
-import logging
+from app.common.logging import logger, setup_logging
 
-# 로그 파일 경로를 main.py 기준으로 gateway/gateway.log로 지정
-LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'gateway.log')
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s %(levelname)s %(message)s',
-    handlers=[
-        logging.FileHandler(LOG_PATH),
-        logging.StreamHandler()
-    ]
-)
+# loguru 기반 로깅 설정
+setup_logging()
 
 from app.domains.log.services.common.tracing import init_tracer, patch_global_logging_format
 from app.domains.log.services.common.sentry import init_sentry
@@ -68,7 +60,6 @@ app.include_router(gateway_router, prefix="/gateway")
 
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
-    logger = logging.getLogger("gateway-exception")
     SENTRY_ENABLED = os.environ.get("SENTRY", "false").lower() == "true"
     SENTRY_DSN = os.environ.get("SENTRY_DSN") or None
     if SENTRY_ENABLED and SENTRY_DSN:
@@ -77,7 +68,7 @@ async def global_exception_handler(request: Request, exc: Exception):
             sentry_sdk.capture_exception(exc)
         except Exception as sentry_exc:
             logger.error(f"[Sentry] 연동 실패: {sentry_exc}")
-    logger.error(f"[Global Exception Handler] {request.method} {request.url} - {exc}", exc_info=True)
+    logger.error(f"[Global Exception Handler] {request.method} {request.url} - {exc}")
     if isinstance(exc, HTTPException):
         return JSONResponse(
             status_code=exc.status_code,
@@ -88,17 +79,19 @@ async def global_exception_handler(request: Request, exc: Exception):
         content={"detail": "예상치 못한 오류가 발생했습니다.", "error": str(exc)},
     )
 
+from app.common.logging import logger
+
 @app.on_event("startup")
 async def on_startup():
     mode = os.environ.get("AUTH_MODE")
     local_token = os.environ.get("AUTH_LOCAL_TOKEN")
     remote_url = os.environ.get("AUTH_SERVER_URL")
-    logging.info("Gateway service started.")
-    logging.info(f"[gateway] AUTH_MODE={mode}")
+    logger.info("Gateway service started.")
+    logger.info(f"[gateway] AUTH_MODE={mode}")
     if mode == "local" and local_token:
-        logging.info(f"[gateway] AUTH_LOCAL_TOKEN={local_token}")
+        logger.info(f"[gateway] AUTH_LOCAL_TOKEN={local_token}")
     elif mode == "remote":
-        logging.info(f"[gateway] AUTH_SERVER_URL={remote_url}")
+        logger.info(f"[gateway] AUTH_SERVER_URL={remote_url}")
 
 # 진단용: 실제 등록된 모든 라우트 경로와 메서드 출력
 for route in app.routes:

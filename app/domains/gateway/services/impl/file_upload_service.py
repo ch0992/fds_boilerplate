@@ -4,15 +4,12 @@ from app.domains.file.services.interfaces.uploader_interface import UploaderInte
 from app.common.kafka.producer_factory import get_kafka_producer
 from app.common.config import settings
 import json
-import logging
 import os
 import sys
 from app.domains.gateway.services.impl.file_metadata_service import FileMetadataService
 from app.domains.file.schemas.metadata import FileMetadataRequest
 
-logging.basicConfig(level=logging.INFO, force=True)
-
-logger = logging.getLogger("gateway-upload")
+from app.common.logging import logger
 
 # boto3가 없으면 설치 안내
 try:
@@ -28,44 +25,52 @@ except ImportError:
 
 class FileUploadService(FileUploadInterface):
     async def upload_file_and_metadata_file(self, topic: str, file: UploadFile, metadata_file: UploadFile):
-        logger.info(f"[Gateway] 파일 업로드 요청 시작: filename={file.filename}, content_type={file.content_type}")
-        sys.stdout.flush()
-        file.file.seek(0, 2)
-        size = file.file.tell()
-        file.file.seek(0)
-        logger.info(f"[Gateway] 파일 크기: {size} bytes")
-        sys.stdout.flush()
-        chunk_size = 20 * 1024 * 1024  # 20MB
-
-        # metadata 파싱은 맨 앞에서 단 한 번만!
         try:
-            logger.info(f"[Gateway] 메타데이터 파싱 시도: {metadata_file.filename}")
-            metadata = await self._parse_metadata_file(metadata_file)
+            logger.info(f"[Gateway] 파일 업로드 요청 시작: filename={file.filename}, content_type={file.content_type}")
+            sys.stdout.flush()
+            file.file.seek(0, 2)
+            size = file.file.tell()
+            file.file.seek(0)
+            logger.info(f"[Gateway] 파일 크기: {size} bytes")
+            sys.stdout.flush()
+            chunk_size = 20 * 1024 * 1024  # 20MB
+
+            # metadata 파싱은 맨 앞에서 단 한 번만!
+            try:
+                logger.info(f"[Gateway] 메타데이터 파싱 시도: {metadata_file.filename}")
+                metadata = await self._parse_metadata_file(metadata_file)
+            except Exception as e:
+                logger.error(f"[Gateway] 메타데이터 파싱 실패: {e}, 입력값: {metadata_file.filename}")
+                raise ValueError(f"메타데이터 파싱 실패: {e}, 입력값: {metadata_file.filename}")
+            
+            return await self._upload_file_and_produce_metadata(topic, file, metadata)
         except Exception as e:
-            logger.error(f"[Gateway] 메타데이터 파싱 실패: {e}, 입력값: {metadata_file.filename}")
-            raise ValueError(f"메타데이터 파싱 실패: {e}, 입력값: {metadata_file.filename}")
-        
-        return await self._upload_file_and_produce_metadata(topic, file, metadata)
+            logger.error(f"[Gateway] 전체 업로드 실패: {e}")
+            raise
 
     async def upload_file_and_metadata_json(self, topic: str, file: UploadFile, metadata: str):
-        logger.info(f"[Gateway] 파일 업로드 요청 시작: filename={file.filename}, content_type={file.content_type}")
-        sys.stdout.flush()
-        file.file.seek(0, 2)
-        size = file.file.tell()
-        file.file.seek(0)
-        logger.info(f"[Gateway] 파일 크기: {size} bytes")
-        sys.stdout.flush()
-        chunk_size = 20 * 1024 * 1024  # 20MB
-
-        # metadata 파싱은 맨 앞에서 단 한 번만!
         try:
-            logger.info(f"[Gateway] 메타데이터 파싱 시도: {metadata}")
-            metadata = await self._parse_metadata_json(metadata)
+            logger.info(f"[Gateway] 파일 업로드 요청 시작: filename={file.filename}, content_type={file.content_type}")
+            sys.stdout.flush()
+            file.file.seek(0, 2)
+            size = file.file.tell()
+            file.file.seek(0)
+            logger.info(f"[Gateway] 파일 크기: {size} bytes")
+            sys.stdout.flush()
+            chunk_size = 20 * 1024 * 1024  # 20MB
+
+            # metadata 파싱은 맨 앞에서 단 한 번만!
+            try:
+                logger.info(f"[Gateway] 메타데이터 파싱 시도: {metadata}")
+                metadata = await self._parse_metadata_json(metadata)
+            except Exception as e:
+                logger.error(f"[Gateway] 메타데이터 파싱 실패: {e}, 입력값: {metadata}")
+                raise ValueError(f"메타데이터 파싱 실패: {e}, 입력값: {metadata}")
+            
+            return await self._upload_file_and_produce_metadata(topic, file, metadata)
         except Exception as e:
-            logger.error(f"[Gateway] 메타데이터 파싱 실패: {e}, 입력값: {metadata}")
-            raise ValueError(f"메타데이터 파싱 실패: {e}, 입력값: {metadata}")
-        
-        return await self._upload_file_and_produce_metadata(topic, file, metadata)
+            logger.error(f"[Gateway] 전체 업로드 실패: {e}")
+            raise
 
     async def upload_file_and_metadata(self, topic: str, file: UploadFile, metadata: str):
         """
@@ -76,22 +81,30 @@ class FileUploadService(FileUploadInterface):
 
     async def _parse_metadata_file(self, metadata_file: UploadFile):
         try:
+            logger.info(f"[Gateway] 메타데이터 파일 파싱 시도: {getattr(metadata_file, 'filename', None)}")
             metadata = await metadata_file.read()
             metadata = json.loads(metadata)
-            return FileMetadataRequest(**metadata)
+            result = FileMetadataRequest(**metadata)
+            logger.info(f"[Gateway] 메타데이터 파일 파싱 성공: {result}")
+            return result
         except Exception as e:
-            raise e
+            logger.error(f"[Gateway] 메타데이터 파일 파싱 실패: {e}, 입력값: {getattr(metadata_file, 'filename', None)}")
+            raise ValueError(f"메타데이터 파일 파싱 실패: {e}, 입력값: {getattr(metadata_file, 'filename', None)}")
 
     async def _parse_metadata_json(self, metadata: str):
         try:
+            logger.info(f"[Gateway] 메타데이터 JSON 파싱 시도: {metadata}")
             if not metadata or (isinstance(metadata, str) and metadata.strip() == ""):
                 raise ValueError("metadata 값이 비어있거나 None입니다.")
             if isinstance(metadata, dict):
-                return FileMetadataRequest(**metadata)
+                result = FileMetadataRequest(**metadata)
             else:
-                return FileMetadataRequest(**json.loads(metadata))
+                result = FileMetadataRequest(**json.loads(metadata))
+            logger.info(f"[Gateway] 메타데이터 JSON 파싱 성공: {result}")
+            return result
         except Exception as e:
-            raise e
+            logger.error(f"[Gateway] 메타데이터 JSON 파싱 실패: {e}, 입력값: {metadata}")
+            raise ValueError(f"메타데이터 JSON 파싱 실패: {e}, 입력값: {metadata}")
 
     async def _upload_file_and_produce_metadata(self, topic: str, file: UploadFile, metadata: FileMetadataRequest):
         if settings.ENV in ["stage", "production"]:
