@@ -14,14 +14,18 @@
 📦 fds_boilerplate
 ├── app
 │   ├── common
-│   └── domains
+│   ├── domains
+│   │   ├── gateway
+│   │   ├── file
+│   │   ├── data
+│   │   └── log
+│   └── tests
 │       ├── gateway
 │       ├── file
 │       ├── data
 │       └── log
 ├── infra
 ├── scripts
-├── tests
 ├── .env
 └── requirements.txt
 ```
@@ -34,7 +38,7 @@
 | app/domains/{도메인} | gateway, file, data, log 등 도메인별 독립 서비스로 분리된 FastAPI 앱    |
 | infra                | Helm chart, Kubernetes manifest 등 실제 배포 인프라 구성 관리 영역      |
 | scripts              | 개발 및 실행을 돕는 로컬 실행 스크립트들 포함 (예: run_all_fastapi_local.sh) |
-| tests                | 테스트 코드 모음 (TDD 방식으로 도메인별로 작성 ,CI/CD Test Stage에서 필요)                |
+| app/tests            | 테스트 코드 모음 (TDD 방식으로 도메인별로 작성, CI/CD Test Stage에서 필요)                |
 | .env                 | 환경별 실행 변수를 정의하는 파일로, 서비스 간 통일된 포트 및 설정 공유   |
 | requirements.txt     | 전체 서비스에서 사용하는 Python 패키지 의존성 목록                      |
 
