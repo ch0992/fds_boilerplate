@@ -1,0 +1,80 @@
+{
+    // VSCode Python Debugging for FastAPI microservices
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Gateway (FastAPI)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "app.domains.gateway.main:app",
+                "--host", "0.0.0.0",
+                "--port", "8000"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Python: File (FastAPI)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "app.domains.file.main:app",
+                "--host", "0.0.0.0",
+                "--port", "8001"
+            ],
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "Python: Data (FastAPI)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "app.domains.data.main:app",
+                "--host", "0.0.0.0",
+                "--port", "8002"
+            ],
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "Python: Log (FastAPI)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "app.domains.log.main:app",
+                "--host", "0.0.0.0",
+                "--port", "8003"
+            ],
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "justMyCode": false
+        }
+    ],
+    "compounds": [
+        {
+            "name": "All FDS Services",
+            "configurations": [
+                "Python: Gateway (FastAPI)",
+                "Python: File (FastAPI)",
+                "Python: Data (FastAPI)",
+                "Python: Log (FastAPI)"
+            ]
+        }
+    ]
+}

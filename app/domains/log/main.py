@@ -7,7 +7,7 @@ import logging
 from dotenv import load_dotenv
 from fastapi import FastAPI
 
-from app.core.config import settings
+from app.common.config import settings
 from app.domains.log.services.common.middleware import install_exception_handlers, TraceLoggingMiddleware
 from app.domains.log.services.common.tracing import init_tracer
 from app.domains.log.services.common.sentry import init_sentry

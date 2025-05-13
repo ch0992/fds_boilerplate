@@ -9,7 +9,7 @@ from fastapi import FastAPI
 from app.domains.data.api.routes import router as data_router
 from app.domains.log.services.common.tracing import init_tracer
 from app.domains.log.services.common.middleware import install_exception_handlers, TraceLoggingMiddleware
-from app.core.config import settings
+from app.common.config import settings
 from app.domains.log.services.common.sentry import init_sentry
 
 # 로그 파일 경로를 main.py 기준으로 data/data.log로 지정

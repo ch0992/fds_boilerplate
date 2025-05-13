@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Path, HTTPException, Body, Header
 from app.domains.data.schemas.table import TableRecordRequest, KafkaProduceResult
-from app.common.clients.data_service_client import DataServiceClient
-from app.core.config import settings
+from app.domains.gateway.clients.data_service_client import DataServiceClient
+from app.common.config import settings
 from typing import Optional
 from app.common.utils.auth_mode import get_auth_mode
 

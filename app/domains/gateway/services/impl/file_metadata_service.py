@@ -1,6 +1,6 @@
 from app.domains.file.schemas.metadata import FileMetadataRequest, KafkaProduceResult
-from app.common.clients.file_service_client import FileServiceClient
-from app.core.config import settings
+from app.domains.gateway.clients.file_service_client import FileServiceClient
+from app.common.config import settings
 
 file_client = FileServiceClient(settings.FILE_SERVICE_URL)
 

@@ -9,8 +9,8 @@
 from fastapi import APIRouter, Path, HTTPException, Header
 router = APIRouter()
 from app.domains.file.schemas.presigned import PresignedURLResponse
-from app.common.clients.file_service_client import FileServiceClient
-from app.core.config import settings
+from app.domains.gateway.clients.file_service_client import FileServiceClient
+from app.common.config import settings
 from typing import Optional
 from app.common.utils.auth_mode import get_auth_mode
 

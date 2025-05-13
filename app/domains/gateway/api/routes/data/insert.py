@@ -6,7 +6,7 @@ from app.domains.gateway.schemas.insert_payload import InsertPayload
 from app.domains.gateway.auth import get_current_user
 from app.domains.log.exceptions import capture_and_log
 from opentelemetry import trace
-from app.core.config import settings
+from app.common.config import settings
 from typing import Optional
 from app.common.utils.auth_mode import get_auth_mode
     

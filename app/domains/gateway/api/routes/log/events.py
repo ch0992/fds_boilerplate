@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Header, HTTPException, status, Body
-from app.common.clients.log_service_client import LogServiceClient
-from app.core.config import settings
+from app.domains.gateway.clients.log_service_client import LogServiceClient
+from app.common.config import settings
 from typing import Optional
 from app.common.utils.auth_mode import get_auth_mode
 

@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Header
 from app.domains.log.services.common.tracing import get_tracer
 import logging
-from app.core.config import settings
+from app.common.config import settings
 from app.common.utils.auth_mode import get_auth_mode
 from typing import Optional
     

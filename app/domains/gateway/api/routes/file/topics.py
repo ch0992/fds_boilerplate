@@ -13,10 +13,10 @@
 """
 
 from fastapi import APIRouter, Path, status, Header, HTTPException
-from app.common.exceptions import BadRequestException, NotFoundException, SystemConfigException
+from app.common.utils.exceptions import BadRequestException, NotFoundException, SystemConfigException
 from app.domains.gateway.services.impl.file_metadata_service import FileMetadataService
 from app.domains.file.schemas.metadata import FileMetadataRequest, KafkaProduceResult
-from app.core.config import settings
+from app.common.config import settings
 from app.domains.log.services.common.tracing import get_tracer
 from app.domains.gateway.services.impl.auth_module_service import verify_access_token_dependency, auth_service
 from fastapi import Depends

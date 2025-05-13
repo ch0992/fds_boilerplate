@@ -23,7 +23,7 @@ from app.domains.log.services.common.tracing import init_tracer, patch_global_lo
 from app.domains.log.services.common.sentry import init_sentry
 from app.domains.log.services.common.middleware import install_exception_handlers, TraceLoggingMiddleware
 from app.domains.gateway.api.routes import router as gateway_router
-from app.core.config import settings
+from app.common.config import settings
 
 # 글로벌 로그 포맷터 패치(최상단에 적용)
 patch_global_logging_format()

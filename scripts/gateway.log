@@ -1,16 +1,16 @@
-2025-05-13 12:58:37,448 WARNING Overriding of current TracerProvider is not allowed [trace_id=- span_id=-]
-INFO:     Started server process [49182]
-2025-05-13 12:58:37,453 INFO Started server process [49182] [trace_id=- span_id=-]
+2025-05-13 14:48:56,327 WARNING Overriding of current TracerProvider is not allowed [trace_id=- span_id=-]
+INFO:     Started server process [63736]
+2025-05-13 14:48:56,333 INFO Started server process [63736] [trace_id=- span_id=-]
 INFO:     Waiting for application startup.
-2025-05-13 12:58:37,454 INFO Waiting for application startup. [trace_id=- span_id=-]
-2025-05-13 12:58:37,454 INFO Gateway service started. [trace_id=- span_id=-]
-2025-05-13 12:58:37,454 INFO [gateway] AUTH_MODE=local [trace_id=- span_id=-]
-2025-05-13 12:58:37,454 INFO [gateway] AUTH_LOCAL_TOKEN=dev-token [trace_id=- span_id=-]
+2025-05-13 14:48:56,333 INFO Waiting for application startup. [trace_id=- span_id=-]
+2025-05-13 14:48:56,333 INFO Gateway service started. [trace_id=- span_id=-]
+2025-05-13 14:48:56,333 INFO [gateway] AUTH_MODE=local [trace_id=- span_id=-]
+2025-05-13 14:48:56,333 INFO [gateway] AUTH_LOCAL_TOKEN=dev-token [trace_id=- span_id=-]
 INFO:     Application startup complete.
-2025-05-13 12:58:37,454 INFO Application startup complete. [trace_id=- span_id=-]
+2025-05-13 14:48:56,333 INFO Application startup complete. [trace_id=- span_id=-]
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-2025-05-13 12:58:37,454 INFO Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit) [trace_id=- span_id=-]
-2025-05-13 12:58:40,172 INFO [access] GET /gateway/docs [trace_id=0xe1e3f5f62896f47d6d3e0d048fd3f31c span_id=0x34c269b8081ff290]
+2025-05-13 14:48:56,334 INFO Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit) [trace_id=- span_id=-]
+2025-05-13 14:49:10,367 INFO [access] GET /gateway/docs [trace_id=0xdc54cbfa65849f7eeec7eddd009e1e28 span_id=0xf8bbcfc480f6d83e]
 /gateway/openapi.json {'HEAD', 'GET'}
 /gateway/docs {'HEAD', 'GET'}
 /docs/oauth2-redirect {'HEAD', 'GET'}
@@ -34,20 +34,20 @@ INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 /gateway/file/ping {'GET'}
 /gateway/data/ping {'GET'}
 /gateway/log/ping {'GET'}
-INFO:     127.0.0.1:64321 - "GET /gateway/docs HTTP/1.1" 200 OK
-2025-05-13 12:58:40,920 INFO [access] GET /gateway/openapi.json [trace_id=0xc48d876b20c9b20380bcfc8d56cbf3be span_id=0x38dde54d5eb7da11]
-INFO:     127.0.0.1:64321 - "GET /gateway/openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57711 - "GET /gateway/docs HTTP/1.1" 200 OK
+2025-05-13 14:49:11,065 INFO [access] GET /gateway/openapi.json [trace_id=0xcbe2cb09509650770cda78c4c2b800d3 span_id=0x2010357f6daaf2b6]
+INFO:     127.0.0.1:57711 - "GET /gateway/openapi.json HTTP/1.1" 200 OK
 {
     "name": "HTTP GET /gateway/docs",
     "context": {
-        "trace_id": "0xe1e3f5f62896f47d6d3e0d048fd3f31c",
-        "span_id": "0x34c269b8081ff290",
+        "trace_id": "0xdc54cbfa65849f7eeec7eddd009e1e28",
+        "span_id": "0xf8bbcfc480f6d83e",
         "trace_state": "[]"
     },
     "kind": "SpanKind.INTERNAL",
     "parent_id": null,
-    "start_time": "2025-05-13T03:58:40.172001Z",
-    "end_time": "2025-05-13T03:58:40.172372Z",
+    "start_time": "2025-05-13T05:49:10.367775Z",
+    "end_time": "2025-05-13T05:49:10.369131Z",
     "status": {
         "status_code": "UNSET"
     },
@@ -67,18 +67,776 @@ INFO:     127.0.0.1:64321 - "GET /gateway/openapi.json HTTP/1.1" 200 OK
 {
     "name": "HTTP GET /gateway/openapi.json",
     "context": {
-        "trace_id": "0xc48d876b20c9b20380bcfc8d56cbf3be",
-        "span_id": "0x38dde54d5eb7da11",
+        "trace_id": "0xcbe2cb09509650770cda78c4c2b800d3",
+        "span_id": "0x2010357f6daaf2b6",
         "trace_state": "[]"
     },
     "kind": "SpanKind.INTERNAL",
     "parent_id": null,
-    "start_time": "2025-05-13T03:58:40.920078Z",
-    "end_time": "2025-05-13T03:58:40.932134Z",
+    "start_time": "2025-05-13T05:49:11.065789Z",
+    "end_time": "2025-05-13T05:49:11.079895Z",
     "status": {
         "status_code": "UNSET"
     },
     "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+2025-05-13 14:50:48,652 INFO [access] GET /gateway/ping [trace_id=0xef719749e7fd9c516a0b9766acde243 span_id=0x871539eb358ea3da]
+INFO:     127.0.0.1:57878 - "GET /gateway/ping HTTP/1.1" 200 OK
+2025-05-13 14:50:48,668 INFO [access] GET /gateway/data/ping [trace_id=0x428ceba45a68c8ef1df183c1449b1470 span_id=0xebea2f0c44c9c0a]
+INFO:     127.0.0.1:57880 - "GET /gateway/data/ping HTTP/1.1" 200 OK
+2025-05-13 14:50:48,677 INFO [access] GET /gateway/file/imgplt/aliases [trace_id=0xed9190226476354e5d726285f3fd102a span_id=0x882281efe9ba61a6]
+2025-05-13 14:50:48,711 INFO HTTP Request: GET http://localhost:8001/aliases?user_id=test-user "HTTP/1.1 200 OK" [trace_id=0xed9190226476354e5d726285f3fd102a span_id=0x882281efe9ba61a6]
+[ServiceClient] Request: GET http://localhost:8001/aliases?user_id=test-user | kwargs={}
+[ServiceClient] Response: 200 [{"alias":"project-a","description":"프로젝트 A 적재 경로"},{"alias":"project-b","description":"프로젝트 B 적재 경로"}]
+INFO:     127.0.0.1:57882 - "GET /gateway/file/imgplt/aliases HTTP/1.1" 200 OK
+2025-05-13 14:50:48,719 INFO [access] GET /gateway/file/imgplt/s3/test.txt [trace_id=0xc5500445404e94ce0ba29f4efc5429f5 span_id=0x7eaa2d6b8d24eb96]
+2025-05-13 14:50:48,740 INFO HTTP Request: GET http://localhost:8001/imgplt/s3/test.txt "HTTP/1.1 200 OK" [trace_id=0xc5500445404e94ce0ba29f4efc5429f5 span_id=0x7eaa2d6b8d24eb96]
+[ServiceClient] Request: GET http://localhost:8001/imgplt/s3/test.txt | kwargs={'headers': {}}
+[ServiceClient] Response: 200 {"url":"https://minio.local/bucket/test.txt?presigned=1","expires_in":3600}
+INFO:     127.0.0.1:57886 - "GET /gateway/file/imgplt/s3/test.txt HTTP/1.1" 200 OK
+2025-05-13 14:50:48,749 INFO [access] GET /gateway/file/imgplt/zips [trace_id=0x7febc12eaae1721bd61a641854841d67 span_id=0x9b5ef73359c0070d]
+2025-05-13 14:50:48,768 INFO HTTP Request: GET http://localhost:8001/imgplt/zips?sql=SELECT%20*%20FROM%20files "HTTP/1.1 200 OK" [trace_id=0x7febc12eaae1721bd61a641854841d67 span_id=0x9b5ef73359c0070d]
+[ServiceClient] Request: GET http://localhost:8001/imgplt/zips?sql=SELECT * FROM files | kwargs={'headers': {}}
+[ServiceClient] Response: 200 {"presigned_url":"https://dummy-presigned-url.com/download/zip?sql=SELECT * FROM files","files":["file1.txt","file2.txt","file3.txt"],"sql":"SELECT * FROM files"}
+INFO:     127.0.0.1:57890 - "GET /gateway/file/imgplt/zips?sql=SELECT%20*%20FROM%20files HTTP/1.1" 200 OK
+2025-05-13 14:50:48,776 INFO [access] GET /gateway/file/imgplt/sqls [trace_id=0xca1252f1d7f80b3324a8483b58b2c77c span_id=0xa2ed2458e6ae4dee]
+2025-05-13 14:50:48,796 INFO HTTP Request: GET http://localhost:8001/imgplt/sqls?query=SELECT%20*%20FROM%20files "HTTP/1.1 200 OK" [trace_id=0xca1252f1d7f80b3324a8483b58b2c77c span_id=0xa2ed2458e6ae4dee]
+[ServiceClient] Request: GET http://localhost:8001/imgplt/sqls?query=SELECT * FROM files | kwargs={'headers': {}}
+[ServiceClient] Response: 200 [{"id":1,"name":"meta1","value":"value1"},{"id":2,"name":"meta2","value":"value2"}]
+INFO:     127.0.0.1:57894 - "GET /gateway/file/imgplt/sqls?query=SELECT%20*%20FROM%20files HTTP/1.1" 200 OK
+2025-05-13 14:50:48,804 INFO [access] POST /gateway/file/topics/test-topic [trace_id=0x5f59c2006412d1b7cd3665c6314f55ca span_id=0x1f85832d3b951a5b]
+2025-05-13 14:50:48,827 INFO HTTP Request: POST http://localhost:8001/topics/test-topic "HTTP/1.1 200 OK" [trace_id=0x5f59c2006412d1b7cd3665c6314f55ca span_id=0x1f85832d3b951a5b]
+[ServiceClient] Request: POST http://localhost:8001/topics/test-topic | kwargs={'json': {'file_id': 'testfile1', 'filename': 'test.txt', 'owner': 'user1', 'size': 12345, 'user': None}}
+[ServiceClient] Response: 200 {"topic":"test-topic","message":"{\"file_id\": \"testfile1\", \"filename\": \"test.txt\", \"owner\": \"user1\", \"size\": 12345, \"user\": null}","status":"queued"}
+INFO:     127.0.0.1:57898 - "POST /gateway/file/topics/test-topic HTTP/1.1" 200 OK
+2025-05-13 14:50:48,836 INFO [access] GET /gateway/data/topics [trace_id=0x8a25815725fe348bb6544f3266b03b07 span_id=0x957bc04aff504c12]
+2025-05-13 14:50:48,858 INFO HTTP Request: GET http://localhost:8002/topics "HTTP/1.1 200 OK" [trace_id=0x8a25815725fe348bb6544f3266b03b07 span_id=0x957bc04aff504c12]
+[ServiceClient] Request: GET http://localhost:8002/topics | kwargs={'headers': {}}
+[ServiceClient] Response: 200 ["topic-a","topic-b"]
+INFO:     127.0.0.1:57902 - "GET /gateway/data/topics HTTP/1.1" 200 OK
+2025-05-13 14:50:48,866 INFO [access] POST /gateway/data/topics/test-table [trace_id=0x8ed52ba8abdc64684cb4eeb0ffa04110 span_id=0xe45ca98323b04538]
+2025-05-13 14:50:48,893 INFO HTTP Request: POST http://localhost:8002/topics/test-table "HTTP/1.1 200 OK" [trace_id=0x8ed52ba8abdc64684cb4eeb0ffa04110 span_id=0xe45ca98323b04538]
+[ServiceClient] Request: POST http://localhost:8002/topics/test-table | kwargs={'json': {'order_id': 'order123', 'user_id': 'user456', 'amount': 100}, 'headers': {}}
+[ServiceClient] Response: 200 {"topic":"test-table","status":"success","message":"{\"order_id\": \"order123\", \"user_id\": \"user456\", \"amount\": 100}"}
+INFO:     127.0.0.1:57906 - "POST /gateway/data/topics/test-table HTTP/1.1" 200 OK
+2025-05-13 14:50:48,905 INFO [access] POST /gateway/data/imgplt/curs [trace_id=0x42e61f6df0d92a7ba8227135340bddeb span_id=0x72a597460cd941a8]
+2025-05-13 14:50:48,924 INFO HTTP Request: POST http://localhost:8002/imgplt/curs "HTTP/1.1 200 OK" [trace_id=0x42e61f6df0d92a7ba8227135340bddeb span_id=0x72a597460cd941a8]
+[ServiceClient] Request: POST http://localhost:8002/imgplt/curs | kwargs={'json': {'query': 'SELECT * FROM big_table', 'cursor': None}, 'headers': {}}
+[ServiceClient] Response: 200 {"rows":[{"id":1,"value":"row1"},{"id":2,"value":"row2"}],"next_cursor":null}
+INFO:     127.0.0.1:57910 - "POST /gateway/data/imgplt/curs HTTP/1.1" 200 OK
+2025-05-13 14:50:48,932 INFO [access] POST /gateway/data/imgplt/sqls [trace_id=0x461c352fa4e0648e26b6b46e3e301689 span_id=0x36f13ab1bcd977d9]
+2025-05-13 14:50:48,951 INFO HTTP Request: POST http://localhost:8002/imgplt/sqls "HTTP/1.1 200 OK" [trace_id=0x461c352fa4e0648e26b6b46e3e301689 span_id=0x36f13ab1bcd977d9]
+[ServiceClient] Request: POST http://localhost:8002/imgplt/sqls | kwargs={'json': {'sql': 'SELECT 1'}, 'headers': {'Authorization': 'Bearer test-access-token'}}
+[ServiceClient] Response: 200 {"columns":["id","value"],"rows":[[1,"row1"],[2,"row2"]],"row_count":2}
+INFO:     127.0.0.1:57914 - "POST /gateway/data/imgplt/sqls HTTP/1.1" 200 OK
+2025-05-13 14:50:48,958 INFO [access] GET /gateway/auth/imgplt/auths [trace_id=0xa7d5156325fb44452c02e7ad306f6c22 span_id=0x3f129e2e07bfe099]
+INFO:     127.0.0.1:57918 - "GET /gateway/auth/imgplt/auths HTTP/1.1" 501 Not Implemented
+{
+    "name": "HTTP GET /gateway/ping",
+    "context": {
+        "trace_id": "0x0ef719749e7fd9c516a0b9766acde243",
+        "span_id": "0x871539eb358ea3da",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:50:48.652691Z",
+    "end_time": "2025-05-13T05:50:48.653953Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /gateway/data/ping",
+    "context": {
+        "trace_id": "0x428ceba45a68c8ef1df183c1449b1470",
+        "span_id": "0x0ebea2f0c44c9c0a",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:50:48.668280Z",
+    "end_time": "2025-05-13T05:50:48.668564Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /gateway/file/imgplt/aliases",
+    "context": {
+        "trace_id": "0xed9190226476354e5d726285f3fd102a",
+        "span_id": "0x882281efe9ba61a6",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:50:48.677615Z",
+    "end_time": "2025-05-13T05:50:48.712471Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /gateway/file/imgplt/s3/test.txt",
+    "context": {
+        "trace_id": "0xc5500445404e94ce0ba29f4efc5429f5",
+        "span_id": "0x7eaa2d6b8d24eb96",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:50:48.719934Z",
+    "end_time": "2025-05-13T05:50:48.741243Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /gateway/file/imgplt/zips",
+    "context": {
+        "trace_id": "0x7febc12eaae1721bd61a641854841d67",
+        "span_id": "0x9b5ef73359c0070d",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:50:48.749044Z",
+    "end_time": "2025-05-13T05:50:48.769391Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /gateway/file/imgplt/sqls",
+    "context": {
+        "trace_id": "0xca1252f1d7f80b3324a8483b58b2c77c",
+        "span_id": "0xa2ed2458e6ae4dee",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:50:48.776753Z",
+    "end_time": "2025-05-13T05:50:48.796750Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP POST /gateway/file/topics/test-topic",
+    "context": {
+        "trace_id": "0x5f59c2006412d1b7cd3665c6314f55ca",
+        "span_id": "0x1f85832d3b951a5b",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:50:48.804709Z",
+    "end_time": "2025-05-13T05:50:48.828297Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /gateway/data/topics",
+    "context": {
+        "trace_id": "0x8a25815725fe348bb6544f3266b03b07",
+        "span_id": "0x957bc04aff504c12",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:50:48.836011Z",
+    "end_time": "2025-05-13T05:50:48.858556Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP POST /gateway/data/topics/test-table",
+    "context": {
+        "trace_id": "0x8ed52ba8abdc64684cb4eeb0ffa04110",
+        "span_id": "0xe45ca98323b04538",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:50:48.866081Z",
+    "end_time": "2025-05-13T05:50:48.896194Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP POST /gateway/data/imgplt/curs",
+    "context": {
+        "trace_id": "0x42e61f6df0d92a7ba8227135340bddeb",
+        "span_id": "0x72a597460cd941a8",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:50:48.905096Z",
+    "end_time": "2025-05-13T05:50:48.924729Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP POST /gateway/data/imgplt/sqls",
+    "context": {
+        "trace_id": "0x461c352fa4e0648e26b6b46e3e301689",
+        "span_id": "0x36f13ab1bcd977d9",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:50:48.932037Z",
+    "end_time": "2025-05-13T05:50:48.951566Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /gateway/auth/imgplt/auths",
+    "context": {
+        "trace_id": "0xa7d5156325fb44452c02e7ad306f6c22",
+        "span_id": "0x3f129e2e07bfe099",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:50:48.958707Z",
+    "end_time": "2025-05-13T05:50:48.958998Z",
+    "status": {
+        "status_code": "ERROR",
+        "description": "Not implemented: \uc2e4\uc81c \uc778\uc99d \uc11c\ube44\uc2a4 \uc5f0\ub3d9 \ud544\uc694"
+    },
+    "attributes": {
+        "http.status_code": 501,
+        "http.exception.detail": "Not implemented: \uc2e4\uc81c \uc778\uc99d \uc11c\ube44\uc2a4 \uc5f0\ub3d9 \ud544\uc694"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+2025-05-13 14:54:49,315 INFO [access] GET /gateway/ping [trace_id=0x91979b32d4a29ab702c7f5ffcd09e592 span_id=0xa0b6e54c32af4d03]
+INFO:     127.0.0.1:58448 - "GET /gateway/ping HTTP/1.1" 200 OK
+2025-05-13 14:54:49,325 INFO [access] GET /gateway/data/ping [trace_id=0x7bf377eb56f4b446f08565307e13cd06 span_id=0x16bd7278d5c2d8c2]
+INFO:     127.0.0.1:58450 - "GET /gateway/data/ping HTTP/1.1" 200 OK
+2025-05-13 14:54:49,333 INFO [access] GET /gateway/file/imgplt/aliases [trace_id=0xf60a2c5e395de0110e43e943b597c2c7 span_id=0x9ed8661c52b6b707]
+2025-05-13 14:54:49,359 INFO HTTP Request: GET http://localhost:8001/aliases?user_id=test-user "HTTP/1.1 200 OK" [trace_id=0xf60a2c5e395de0110e43e943b597c2c7 span_id=0x9ed8661c52b6b707]
+[ServiceClient] Request: GET http://localhost:8001/aliases?user_id=test-user | kwargs={}
+[ServiceClient] Response: 200 [{"alias":"project-a","description":"프로젝트 A 적재 경로"},{"alias":"project-b","description":"프로젝트 B 적재 경로"}]
+INFO:     127.0.0.1:58452 - "GET /gateway/file/imgplt/aliases HTTP/1.1" 200 OK
+2025-05-13 14:54:49,367 INFO [access] GET /gateway/file/imgplt/s3/test.txt [trace_id=0x9f33eded1afc0f1de064b17a6e49d843 span_id=0x59eb170175682790]
+2025-05-13 14:54:49,387 INFO HTTP Request: GET http://localhost:8001/imgplt/s3/test.txt "HTTP/1.1 200 OK" [trace_id=0x9f33eded1afc0f1de064b17a6e49d843 span_id=0x59eb170175682790]
+[ServiceClient] Request: GET http://localhost:8001/imgplt/s3/test.txt | kwargs={'headers': {}}
+[ServiceClient] Response: 200 {"url":"https://minio.local/bucket/test.txt?presigned=1","expires_in":3600}
+INFO:     127.0.0.1:58456 - "GET /gateway/file/imgplt/s3/test.txt HTTP/1.1" 200 OK
+2025-05-13 14:54:49,394 INFO [access] GET /gateway/file/imgplt/zips [trace_id=0x7b5191967908bff69e277d88f22ced97 span_id=0xd86abf6d880c9582]
+2025-05-13 14:54:49,414 INFO HTTP Request: GET http://localhost:8001/imgplt/zips?sql=SELECT%20*%20FROM%20files "HTTP/1.1 200 OK" [trace_id=0x7b5191967908bff69e277d88f22ced97 span_id=0xd86abf6d880c9582]
+[ServiceClient] Request: GET http://localhost:8001/imgplt/zips?sql=SELECT * FROM files | kwargs={'headers': {}}
+[ServiceClient] Response: 200 {"presigned_url":"https://dummy-presigned-url.com/download/zip?sql=SELECT * FROM files","files":["file1.txt","file2.txt","file3.txt"],"sql":"SELECT * FROM files"}
+INFO:     127.0.0.1:58460 - "GET /gateway/file/imgplt/zips?sql=SELECT%20*%20FROM%20files HTTP/1.1" 200 OK
+2025-05-13 14:54:49,422 INFO [access] GET /gateway/file/imgplt/sqls [trace_id=0x576fda069da5e858549eeebf393c8674 span_id=0x3fff59cd1b58eca0]
+2025-05-13 14:54:49,444 INFO HTTP Request: GET http://localhost:8001/imgplt/sqls?query=SELECT%20*%20FROM%20files "HTTP/1.1 200 OK" [trace_id=0x576fda069da5e858549eeebf393c8674 span_id=0x3fff59cd1b58eca0]
+[ServiceClient] Request: GET http://localhost:8001/imgplt/sqls?query=SELECT * FROM files | kwargs={'headers': {}}
+[ServiceClient] Response: 200 [{"id":1,"name":"meta1","value":"value1"},{"id":2,"name":"meta2","value":"value2"}]
+INFO:     127.0.0.1:58464 - "GET /gateway/file/imgplt/sqls?query=SELECT%20*%20FROM%20files HTTP/1.1" 200 OK
+2025-05-13 14:54:49,452 INFO [access] POST /gateway/file/topics/test-topic [trace_id=0x8ad1f11a3a382c04b1900ec15c5a81d4 span_id=0xd20cdc134e101b5f]
+2025-05-13 14:54:49,472 INFO HTTP Request: POST http://localhost:8001/topics/test-topic "HTTP/1.1 200 OK" [trace_id=0x8ad1f11a3a382c04b1900ec15c5a81d4 span_id=0xd20cdc134e101b5f]
+[ServiceClient] Request: POST http://localhost:8001/topics/test-topic | kwargs={'json': {'file_id': 'testfile1', 'filename': 'test.txt', 'owner': 'user1', 'size': 12345, 'user': None}}
+[ServiceClient] Response: 200 {"topic":"test-topic","message":"{\"file_id\": \"testfile1\", \"filename\": \"test.txt\", \"owner\": \"user1\", \"size\": 12345, \"user\": null}","status":"queued"}
+INFO:     127.0.0.1:58468 - "POST /gateway/file/topics/test-topic HTTP/1.1" 200 OK
+2025-05-13 14:54:49,480 INFO [access] GET /gateway/data/topics [trace_id=0x7065e6e11f0cf091f22d2dd4e9ef617c span_id=0x910b4b872885281e]
+2025-05-13 14:54:49,501 INFO HTTP Request: GET http://localhost:8002/topics "HTTP/1.1 200 OK" [trace_id=0x7065e6e11f0cf091f22d2dd4e9ef617c span_id=0x910b4b872885281e]
+[ServiceClient] Request: GET http://localhost:8002/topics | kwargs={'headers': {}}
+[ServiceClient] Response: 200 ["topic-a","topic-b"]
+INFO:     127.0.0.1:58472 - "GET /gateway/data/topics HTTP/1.1" 200 OK
+2025-05-13 14:54:49,508 INFO [access] POST /gateway/data/topics/test-table [trace_id=0xd6352115bb79bf974e6b71f30d3dd8eb span_id=0xd7b8adc7de60d464]
+2025-05-13 14:54:49,530 INFO HTTP Request: POST http://localhost:8002/topics/test-table "HTTP/1.1 200 OK" [trace_id=0xd6352115bb79bf974e6b71f30d3dd8eb span_id=0xd7b8adc7de60d464]
+[ServiceClient] Request: POST http://localhost:8002/topics/test-table | kwargs={'json': {'order_id': 'order123', 'user_id': 'user456', 'amount': 100}, 'headers': {}}
+[ServiceClient] Response: 200 {"topic":"test-table","status":"success","message":"{\"order_id\": \"order123\", \"user_id\": \"user456\", \"amount\": 100}"}
+INFO:     127.0.0.1:58476 - "POST /gateway/data/topics/test-table HTTP/1.1" 200 OK
+2025-05-13 14:54:49,538 INFO [access] POST /gateway/data/imgplt/curs [trace_id=0xa48af1e5808464f2fe8f88643f141158 span_id=0xd382f3e11689685b]
+2025-05-13 14:54:49,557 INFO HTTP Request: POST http://localhost:8002/imgplt/curs "HTTP/1.1 200 OK" [trace_id=0xa48af1e5808464f2fe8f88643f141158 span_id=0xd382f3e11689685b]
+[ServiceClient] Request: POST http://localhost:8002/imgplt/curs | kwargs={'json': {'query': 'SELECT * FROM big_table', 'cursor': None}, 'headers': {}}
+[ServiceClient] Response: 200 {"rows":[{"id":1,"value":"row1"},{"id":2,"value":"row2"}],"next_cursor":null}
+INFO:     127.0.0.1:58480 - "POST /gateway/data/imgplt/curs HTTP/1.1" 200 OK
+2025-05-13 14:54:49,565 INFO [access] POST /gateway/data/imgplt/sqls [trace_id=0xf9e6fee5fa427d0475f42c73bd34e489 span_id=0xc953705418cc4ad0]
+2025-05-13 14:54:49,584 INFO HTTP Request: POST http://localhost:8002/imgplt/sqls "HTTP/1.1 200 OK" [trace_id=0xf9e6fee5fa427d0475f42c73bd34e489 span_id=0xc953705418cc4ad0]
+[ServiceClient] Request: POST http://localhost:8002/imgplt/sqls | kwargs={'json': {'sql': 'SELECT 1'}, 'headers': {'Authorization': 'Bearer test-access-token'}}
+[ServiceClient] Response: 200 {"columns":["id","value"],"rows":[[1,"row1"],[2,"row2"]],"row_count":2}
+INFO:     127.0.0.1:58484 - "POST /gateway/data/imgplt/sqls HTTP/1.1" 200 OK
+2025-05-13 14:54:49,593 INFO [access] GET /gateway/auth/imgplt/auths [trace_id=0xb4435af13333d926a152a44a86813e2c span_id=0xd753e99cb0a84808]
+INFO:     127.0.0.1:58488 - "GET /gateway/auth/imgplt/auths HTTP/1.1" 501 Not Implemented
+{
+    "name": "HTTP GET /gateway/ping",
+    "context": {
+        "trace_id": "0x91979b32d4a29ab702c7f5ffcd09e592",
+        "span_id": "0xa0b6e54c32af4d03",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:54:49.315642Z",
+    "end_time": "2025-05-13T05:54:49.317154Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /gateway/data/ping",
+    "context": {
+        "trace_id": "0x7bf377eb56f4b446f08565307e13cd06",
+        "span_id": "0x16bd7278d5c2d8c2",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:54:49.325411Z",
+    "end_time": "2025-05-13T05:54:49.325650Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /gateway/file/imgplt/aliases",
+    "context": {
+        "trace_id": "0xf60a2c5e395de0110e43e943b597c2c7",
+        "span_id": "0x9ed8661c52b6b707",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:54:49.333933Z",
+    "end_time": "2025-05-13T05:54:49.360468Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /gateway/file/imgplt/s3/test.txt",
+    "context": {
+        "trace_id": "0x9f33eded1afc0f1de064b17a6e49d843",
+        "span_id": "0x59eb170175682790",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:54:49.367875Z",
+    "end_time": "2025-05-13T05:54:49.387533Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /gateway/file/imgplt/zips",
+    "context": {
+        "trace_id": "0x7b5191967908bff69e277d88f22ced97",
+        "span_id": "0xd86abf6d880c9582",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:54:49.394957Z",
+    "end_time": "2025-05-13T05:54:49.414985Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /gateway/file/imgplt/sqls",
+    "context": {
+        "trace_id": "0x576fda069da5e858549eeebf393c8674",
+        "span_id": "0x3fff59cd1b58eca0",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:54:49.422505Z",
+    "end_time": "2025-05-13T05:54:49.444769Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP POST /gateway/file/topics/test-topic",
+    "context": {
+        "trace_id": "0x8ad1f11a3a382c04b1900ec15c5a81d4",
+        "span_id": "0xd20cdc134e101b5f",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:54:49.452602Z",
+    "end_time": "2025-05-13T05:54:49.472477Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /gateway/data/topics",
+    "context": {
+        "trace_id": "0x7065e6e11f0cf091f22d2dd4e9ef617c",
+        "span_id": "0x910b4b872885281e",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:54:49.480271Z",
+    "end_time": "2025-05-13T05:54:49.501464Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP POST /gateway/data/topics/test-table",
+    "context": {
+        "trace_id": "0xd6352115bb79bf974e6b71f30d3dd8eb",
+        "span_id": "0xd7b8adc7de60d464",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:54:49.508918Z",
+    "end_time": "2025-05-13T05:54:49.530807Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP POST /gateway/data/imgplt/curs",
+    "context": {
+        "trace_id": "0xa48af1e5808464f2fe8f88643f141158",
+        "span_id": "0xd382f3e11689685b",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:54:49.538331Z",
+    "end_time": "2025-05-13T05:54:49.557959Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP POST /gateway/data/imgplt/sqls",
+    "context": {
+        "trace_id": "0xf9e6fee5fa427d0475f42c73bd34e489",
+        "span_id": "0xc953705418cc4ad0",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:54:49.565864Z",
+    "end_time": "2025-05-13T05:54:49.585001Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /gateway/auth/imgplt/auths",
+    "context": {
+        "trace_id": "0xb4435af13333d926a152a44a86813e2c",
+        "span_id": "0xd753e99cb0a84808",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:54:49.593404Z",
+    "end_time": "2025-05-13T05:54:49.596164Z",
+    "status": {
+        "status_code": "ERROR",
+        "description": "Not implemented: \uc2e4\uc81c \uc778\uc99d \uc11c\ube44\uc2a4 \uc5f0\ub3d9 \ud544\uc694"
+    },
+    "attributes": {
+        "http.status_code": 501,
+        "http.exception.detail": "Not implemented: \uc2e4\uc81c \uc778\uc99d \uc11c\ube44\uc2a4 \uc5f0\ub3d9 \ud544\uc694"
+    },
     "events": [],
     "links": [],
     "resource": {

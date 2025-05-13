@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, Body, Header, status
-from app.core.config import settings
-from app.common.clients.data_service_client import DataServiceClient
+from app.common.config import settings
+from app.domains.gateway.clients.data_service_client import DataServiceClient
 from typing import Optional
 
 router = APIRouter(prefix="/data")

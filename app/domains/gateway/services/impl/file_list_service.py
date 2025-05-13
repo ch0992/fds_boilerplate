@@ -1,6 +1,7 @@
 from app.domains.gateway.services.interfaces.file_list_interface import FileListInterface
 from app.domains.file.services.interfaces.list_query_interface import ListQueryInterface
-from app.core.logging import get_tracer, capture_and_log
+from app.common.config import settings
+from app.common.logging import get_tracer, capture_and_log
 
 tracer = get_tracer("gateway::list_files")
 

@@ -15,8 +15,8 @@ from app.domains.file.services.impl.alias_query_service import AliasQueryService
 from app.domains.file.schemas.aliases import AliasListResponse
 # from app.services.auth.dependencies import get_current_user
 # from app.services.auth.schemas import User
-from app.common.clients.file_service_client import FileServiceClient
-from app.core.config import settings
+from app.domains.gateway.clients.file_service_client import FileServiceClient
+from app.common.config import settings
 from typing import Optional
 from app.common.utils.auth_mode import get_auth_mode
 

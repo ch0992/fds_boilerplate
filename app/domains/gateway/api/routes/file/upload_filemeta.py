@@ -17,7 +17,7 @@ WHY:
 """
 
 from fastapi import APIRouter, UploadFile, File, Path, Header, status, Depends, HTTPException
-from app.common.exceptions import BadRequestException, NotFoundException, SystemConfigException
+from app.common.utils.exceptions import BadRequestException, NotFoundException, SystemConfigException
 from typing import Optional
 from app.domains.gateway.services.interfaces.file_upload_interface import FileUploadInterface
 from app.common.utils.auth_mode import get_auth_mode

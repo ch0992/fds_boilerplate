@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Body, Header
 from app.domains.data.schemas.curs import CursorQueryRequest
-from app.common.clients.data_service_client import DataServiceClient
-from app.core.config import settings
+from app.domains.gateway.clients.data_service_client import DataServiceClient
+from app.common.config import settings
 from app.common.utils.auth_mode import get_auth_mode
 from typing import Optional
 

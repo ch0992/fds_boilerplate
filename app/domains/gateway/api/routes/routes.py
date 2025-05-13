@@ -8,10 +8,11 @@ from app.domains.gateway.api.routes.data import router as data_router
 from app.domains.gateway.api.routes.log import router as log_router
 from app.domains.gateway.api.routes.auth.auths import router as auth_router
 from app.domains.gateway.api.routes.data import curs
-from app.common.clients.file_service_client import FileServiceClient
-from app.common.clients.data_service_client import DataServiceClient
-from app.common.clients.log_service_client import LogServiceClient
-from app.core.config import settings
+from app.domains.gateway.clients.base_service_client import BaseServiceClient
+from app.domains.gateway.clients.data_service_client import DataServiceClient
+from app.domains.gateway.clients.log_service_client import LogServiceClient
+from app.domains.gateway.clients.file_service_client import FileServiceClient
+from app.common.config import settings
 from app.domains.log.services.common.tracing import get_tracer
 
 router = APIRouter()

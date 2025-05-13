@@ -9,8 +9,8 @@
 from fastapi import APIRouter, Query, HTTPException, Header
 from typing import List, Optional
 from app.domains.file.schemas.sqls import MetaInfoSchema
-from app.common.clients.file_service_client import FileServiceClient
-from app.core.config import settings
+from app.domains.gateway.clients.file_service_client import FileServiceClient
+from app.common.config import settings
 from app.domains.log.services.common.tracing import get_tracer
 from app.common.utils.auth_mode import get_auth_mode
 

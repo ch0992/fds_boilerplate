@@ -17,15 +17,15 @@ WHY:
 """
 
 from fastapi import APIRouter, Path, Header, status, HTTPException
-from app.common.exceptions import NotFoundException, SystemConfigException, UnauthorizedException
+from app.common.utils.exceptions import NotFoundException, SystemConfigException, UnauthorizedException
 from typing import List, Optional
 from app.domains.file.schemas.listing import S3FileEntry
 from app.domains.gateway.services.impl.auth_module_service import auth_service
 from app.common.utils.auth_mode import get_auth_mode
 from app.domains.log.services.common.tracing import get_tracer
-from app.core.logging import capture_and_log
-from app.common.clients.file_service_client import FileServiceClient
-from app.core.config import settings
+from app.common.logging import capture_and_log
+from app.domains.gateway.clients.file_service_client import FileServiceClient
+from app.common.config import settings
 
 # WHY: file 서비스 클라이언트를 생성하여 file 서비스와 통신합니다.
 file_client = FileServiceClient(settings.FILE_SERVICE_URL)

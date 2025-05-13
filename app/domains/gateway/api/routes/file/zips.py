@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Query, HTTPException, Header
-from app.common.clients.file_service_client import FileServiceClient
-from app.core.config import settings
+from app.domains.gateway.clients.file_service_client import FileServiceClient
+from app.common.config import settings
 from app.common.utils.auth_mode import get_auth_mode
 from app.domains.file.schemas.zips import ZipPresignedResponse
 from typing import Optional

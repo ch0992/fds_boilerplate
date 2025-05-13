@@ -1,9 +1,1355 @@
-2025-05-13 12:58:37,582 WARNING Overriding of current TracerProvider is not allowed [trace_id=- span_id=-]
-INFO:     Started server process [49183]
-2025-05-13 12:58:37,585 INFO Started server process [49183] [trace_id=- span_id=-]
+2025-05-13 14:48:56,432 WARNING Overriding of current TracerProvider is not allowed [trace_id=- span_id=-]
+INFO:     Started server process [63737]
+2025-05-13 14:48:56,436 INFO Started server process [63737] [trace_id=- span_id=-]
 INFO:     Waiting for application startup.
-2025-05-13 12:58:37,585 INFO Waiting for application startup. [trace_id=- span_id=-]
+2025-05-13 14:48:56,436 INFO Waiting for application startup. [trace_id=- span_id=-]
 INFO:     Application startup complete.
-2025-05-13 12:58:37,585 INFO Application startup complete. [trace_id=- span_id=-]
+2025-05-13 14:48:56,436 INFO Application startup complete. [trace_id=- span_id=-]
 INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
-2025-05-13 12:58:37,586 INFO Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit) [trace_id=- span_id=-]
+2025-05-13 14:48:56,437 INFO Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit) [trace_id=- span_id=-]
+INFO:     127.0.0.1:57884 - "GET /aliases?user_id=test-user HTTP/1.1" 200 OK
+[FILE] /imgplt/s3/{file_path} called
+INFO:     127.0.0.1:57888 - "GET /imgplt/s3/test.txt HTTP/1.1" 200 OK
+[FILE] /imgplt/zips called
+INFO:     127.0.0.1:57892 - "GET /imgplt/zips?sql=SELECT%20*%20FROM%20files HTTP/1.1" 200 OK
+[FILE] /imgplt/sqls called
+INFO:     127.0.0.1:57896 - "GET /imgplt/sqls?query=SELECT%20*%20FROM%20files HTTP/1.1" 200 OK
+[DummyKafkaProducer] topic=test-topic, value={'file_id': 'testfile1', 'filename': 'test.txt', 'owner': 'user1', 'size': 12345, 'user': None}
+INFO:     127.0.0.1:57900 - "POST /topics/test-topic HTTP/1.1" 200 OK
+{
+    "name": "GET /aliases http send",
+    "context": {
+        "trace_id": "0xb2a88c566dadd39982a2dec30ac05bc6",
+        "span_id": "0x157c32219f67fad8",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x154d90dcb0d873cc",
+    "start_time": "2025-05-13T05:50:48.710569Z",
+    "end_time": "2025-05-13T05:50:48.710615Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /aliases http send",
+    "context": {
+        "trace_id": "0xb2a88c566dadd39982a2dec30ac05bc6",
+        "span_id": "0x3c5362791f4fdcab",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x154d90dcb0d873cc",
+    "start_time": "2025-05-13T05:50:48.710674Z",
+    "end_time": "2025-05-13T05:50:48.710680Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /aliases",
+    "context": {
+        "trace_id": "0xb2a88c566dadd39982a2dec30ac05bc6",
+        "span_id": "0x154d90dcb0d873cc",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xcbd20c24b934a8ff",
+    "start_time": "2025-05-13T05:50:48.709760Z",
+    "end_time": "2025-05-13T05:50:48.710688Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:8001",
+        "net.host.port": 8001,
+        "http.flavor": "1.1",
+        "http.target": "/aliases",
+        "http.url": "http://127.0.0.1:8001/aliases?user_id=test-user",
+        "http.method": "GET",
+        "http.server_name": "localhost:8001",
+        "http.user_agent": "python-httpx/0.25.1",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 57884,
+        "http.route": "/aliases",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /aliases",
+    "context": {
+        "trace_id": "0xb2a88c566dadd39982a2dec30ac05bc6",
+        "span_id": "0xcbd20c24b934a8ff",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:50:48.709176Z",
+    "end_time": "2025-05-13T05:50:48.710776Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/s3/{file_path} http send",
+    "context": {
+        "trace_id": "0xedaf0f4d75fb837b19af4716e46407a6",
+        "span_id": "0x2fbb923cecb32b01",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x0673a77ff72de844",
+    "start_time": "2025-05-13T05:50:48.740280Z",
+    "end_time": "2025-05-13T05:50:48.740296Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/s3/{file_path} http send",
+    "context": {
+        "trace_id": "0xedaf0f4d75fb837b19af4716e46407a6",
+        "span_id": "0x337fb6e07d15dd24",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x0673a77ff72de844",
+    "start_time": "2025-05-13T05:50:48.740327Z",
+    "end_time": "2025-05-13T05:50:48.740331Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/s3/{file_path}",
+    "context": {
+        "trace_id": "0xedaf0f4d75fb837b19af4716e46407a6",
+        "span_id": "0x0673a77ff72de844",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xf7268695ff3568d4",
+    "start_time": "2025-05-13T05:50:48.740013Z",
+    "end_time": "2025-05-13T05:50:48.740335Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:8001",
+        "net.host.port": 8001,
+        "http.flavor": "1.1",
+        "http.target": "/imgplt/s3/test.txt",
+        "http.url": "http://127.0.0.1:8001/imgplt/s3/test.txt",
+        "http.method": "GET",
+        "http.server_name": "localhost:8001",
+        "http.user_agent": "python-httpx/0.25.1",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 57888,
+        "http.route": "/imgplt/s3/{file_path}",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /imgplt/s3/test.txt",
+    "context": {
+        "trace_id": "0xedaf0f4d75fb837b19af4716e46407a6",
+        "span_id": "0xf7268695ff3568d4",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:50:48.739835Z",
+    "end_time": "2025-05-13T05:50:48.740378Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/zips http send",
+    "context": {
+        "trace_id": "0x13c724bf303fcbf1262c22cfbcb9590d",
+        "span_id": "0x5b764385c08373fe",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x3ef6bf3030193637",
+    "start_time": "2025-05-13T05:50:48.768565Z",
+    "end_time": "2025-05-13T05:50:48.768579Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/zips http send",
+    "context": {
+        "trace_id": "0x13c724bf303fcbf1262c22cfbcb9590d",
+        "span_id": "0xba0ef006f22df458",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x3ef6bf3030193637",
+    "start_time": "2025-05-13T05:50:48.768605Z",
+    "end_time": "2025-05-13T05:50:48.768609Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/zips",
+    "context": {
+        "trace_id": "0x13c724bf303fcbf1262c22cfbcb9590d",
+        "span_id": "0x3ef6bf3030193637",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x7a8314d8e320ec61",
+    "start_time": "2025-05-13T05:50:48.768078Z",
+    "end_time": "2025-05-13T05:50:48.768613Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:8001",
+        "net.host.port": 8001,
+        "http.flavor": "1.1",
+        "http.target": "/imgplt/zips",
+        "http.url": "http://127.0.0.1:8001/imgplt/zips?sql=SELECT * FROM files",
+        "http.method": "GET",
+        "http.server_name": "localhost:8001",
+        "http.user_agent": "python-httpx/0.25.1",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 57892,
+        "http.route": "/imgplt/zips",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /imgplt/zips",
+    "context": {
+        "trace_id": "0x13c724bf303fcbf1262c22cfbcb9590d",
+        "span_id": "0x7a8314d8e320ec61",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:50:48.767813Z",
+    "end_time": "2025-05-13T05:50:48.768648Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/sqls http send",
+    "context": {
+        "trace_id": "0x9c30ee57c4118da148f7b6b9c4af984c",
+        "span_id": "0xc084ca9fc25839a1",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xaa9554d29d820c6b",
+    "start_time": "2025-05-13T05:50:48.795922Z",
+    "end_time": "2025-05-13T05:50:48.795936Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/sqls http send",
+    "context": {
+        "trace_id": "0x9c30ee57c4118da148f7b6b9c4af984c",
+        "span_id": "0xdc9db7d32078c651",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xaa9554d29d820c6b",
+    "start_time": "2025-05-13T05:50:48.795976Z",
+    "end_time": "2025-05-13T05:50:48.795981Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/sqls",
+    "context": {
+        "trace_id": "0x9c30ee57c4118da148f7b6b9c4af984c",
+        "span_id": "0xaa9554d29d820c6b",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x7ec7e93a78084a50",
+    "start_time": "2025-05-13T05:50:48.795665Z",
+    "end_time": "2025-05-13T05:50:48.795985Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:8001",
+        "net.host.port": 8001,
+        "http.flavor": "1.1",
+        "http.target": "/imgplt/sqls",
+        "http.url": "http://127.0.0.1:8001/imgplt/sqls?query=SELECT * FROM files",
+        "http.method": "GET",
+        "http.server_name": "localhost:8001",
+        "http.user_agent": "python-httpx/0.25.1",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 57896,
+        "http.route": "/imgplt/sqls",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /imgplt/sqls",
+    "context": {
+        "trace_id": "0x9c30ee57c4118da148f7b6b9c4af984c",
+        "span_id": "0x7ec7e93a78084a50",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:50:48.795528Z",
+    "end_time": "2025-05-13T05:50:48.796021Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "POST /topics/{topic} http receive",
+    "context": {
+        "trace_id": "0xafcfa3db6c6931931839a5705e11c8c9",
+        "span_id": "0x9772c31e3629bc80",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x708c0b3d5eb048f0",
+    "start_time": "2025-05-13T05:50:48.826008Z",
+    "end_time": "2025-05-13T05:50:48.826018Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.request"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "POST /topics/{topic} http send",
+    "context": {
+        "trace_id": "0xafcfa3db6c6931931839a5705e11c8c9",
+        "span_id": "0x70d6275a2a2707ce",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x708c0b3d5eb048f0",
+    "start_time": "2025-05-13T05:50:48.827381Z",
+    "end_time": "2025-05-13T05:50:48.827407Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "POST /topics/{topic} http send",
+    "context": {
+        "trace_id": "0xafcfa3db6c6931931839a5705e11c8c9",
+        "span_id": "0x73c33a950739a023",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x708c0b3d5eb048f0",
+    "start_time": "2025-05-13T05:50:48.827436Z",
+    "end_time": "2025-05-13T05:50:48.827440Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "POST /topics/{topic}",
+    "context": {
+        "trace_id": "0xafcfa3db6c6931931839a5705e11c8c9",
+        "span_id": "0x708c0b3d5eb048f0",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x9e02c235a0544e7f",
+    "start_time": "2025-05-13T05:50:48.825943Z",
+    "end_time": "2025-05-13T05:50:48.827444Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:8001",
+        "net.host.port": 8001,
+        "http.flavor": "1.1",
+        "http.target": "/topics/test-topic",
+        "http.url": "http://127.0.0.1:8001/topics/test-topic",
+        "http.method": "POST",
+        "http.server_name": "localhost:8001",
+        "http.user_agent": "python-httpx/0.25.1",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 57900,
+        "http.route": "/topics/{topic}",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP POST /topics/test-topic",
+    "context": {
+        "trace_id": "0xafcfa3db6c6931931839a5705e11c8c9",
+        "span_id": "0x9e02c235a0544e7f",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:50:48.825825Z",
+    "end_time": "2025-05-13T05:50:48.827490Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+INFO:     127.0.0.1:58454 - "GET /aliases?user_id=test-user HTTP/1.1" 200 OK
+[FILE] /imgplt/s3/{file_path} called
+INFO:     127.0.0.1:58458 - "GET /imgplt/s3/test.txt HTTP/1.1" 200 OK
+[FILE] /imgplt/zips called
+INFO:     127.0.0.1:58462 - "GET /imgplt/zips?sql=SELECT%20*%20FROM%20files HTTP/1.1" 200 OK
+[FILE] /imgplt/sqls called
+INFO:     127.0.0.1:58466 - "GET /imgplt/sqls?query=SELECT%20*%20FROM%20files HTTP/1.1" 200 OK
+[DummyKafkaProducer] topic=test-topic, value={'file_id': 'testfile1', 'filename': 'test.txt', 'owner': 'user1', 'size': 12345, 'user': None}
+INFO:     127.0.0.1:58470 - "POST /topics/test-topic HTTP/1.1" 200 OK
+{
+    "name": "GET /aliases http send",
+    "context": {
+        "trace_id": "0xa831b4cd6fce66a9001e14ef8caefb56",
+        "span_id": "0x34742e2dfaa1678b",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x87934502f1c5d5ac",
+    "start_time": "2025-05-13T05:54:49.358507Z",
+    "end_time": "2025-05-13T05:54:49.358544Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /aliases http send",
+    "context": {
+        "trace_id": "0xa831b4cd6fce66a9001e14ef8caefb56",
+        "span_id": "0xd531163e3cea7c72",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x87934502f1c5d5ac",
+    "start_time": "2025-05-13T05:54:49.358618Z",
+    "end_time": "2025-05-13T05:54:49.358623Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /aliases",
+    "context": {
+        "trace_id": "0xa831b4cd6fce66a9001e14ef8caefb56",
+        "span_id": "0x87934502f1c5d5ac",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x43f08bb10322a321",
+    "start_time": "2025-05-13T05:54:49.357892Z",
+    "end_time": "2025-05-13T05:54:49.358627Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:8001",
+        "net.host.port": 8001,
+        "http.flavor": "1.1",
+        "http.target": "/aliases",
+        "http.url": "http://127.0.0.1:8001/aliases?user_id=test-user",
+        "http.method": "GET",
+        "http.server_name": "localhost:8001",
+        "http.user_agent": "python-httpx/0.25.1",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 58454,
+        "http.route": "/aliases",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /aliases",
+    "context": {
+        "trace_id": "0xa831b4cd6fce66a9001e14ef8caefb56",
+        "span_id": "0x43f08bb10322a321",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:54:49.357411Z",
+    "end_time": "2025-05-13T05:54:49.358698Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/s3/{file_path} http send",
+    "context": {
+        "trace_id": "0xcdc6f2dae48ef82ee498ab2641e4740d",
+        "span_id": "0x82bf5fd81bf93286",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xa6aa1d04cceac305",
+    "start_time": "2025-05-13T05:54:49.386768Z",
+    "end_time": "2025-05-13T05:54:49.386781Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/s3/{file_path} http send",
+    "context": {
+        "trace_id": "0xcdc6f2dae48ef82ee498ab2641e4740d",
+        "span_id": "0x2e97d49907903095",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xa6aa1d04cceac305",
+    "start_time": "2025-05-13T05:54:49.386806Z",
+    "end_time": "2025-05-13T05:54:49.386810Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/s3/{file_path}",
+    "context": {
+        "trace_id": "0xcdc6f2dae48ef82ee498ab2641e4740d",
+        "span_id": "0xa6aa1d04cceac305",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xce4052da8ae42aeb",
+    "start_time": "2025-05-13T05:54:49.386569Z",
+    "end_time": "2025-05-13T05:54:49.386814Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:8001",
+        "net.host.port": 8001,
+        "http.flavor": "1.1",
+        "http.target": "/imgplt/s3/test.txt",
+        "http.url": "http://127.0.0.1:8001/imgplt/s3/test.txt",
+        "http.method": "GET",
+        "http.server_name": "localhost:8001",
+        "http.user_agent": "python-httpx/0.25.1",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 58458,
+        "http.route": "/imgplt/s3/{file_path}",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /imgplt/s3/test.txt",
+    "context": {
+        "trace_id": "0xcdc6f2dae48ef82ee498ab2641e4740d",
+        "span_id": "0xce4052da8ae42aeb",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:54:49.386407Z",
+    "end_time": "2025-05-13T05:54:49.386850Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/zips http send",
+    "context": {
+        "trace_id": "0x0f48c80c0d1811e2037e7f546772f710",
+        "span_id": "0x1baed544af6b5fd1",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xdc1bcab310c9559b",
+    "start_time": "2025-05-13T05:54:49.414080Z",
+    "end_time": "2025-05-13T05:54:49.414103Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/zips http send",
+    "context": {
+        "trace_id": "0x0f48c80c0d1811e2037e7f546772f710",
+        "span_id": "0x771b12c49560e34f",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xdc1bcab310c9559b",
+    "start_time": "2025-05-13T05:54:49.414144Z",
+    "end_time": "2025-05-13T05:54:49.414149Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/zips",
+    "context": {
+        "trace_id": "0x0f48c80c0d1811e2037e7f546772f710",
+        "span_id": "0xdc1bcab310c9559b",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xd742492f5ab85ce5",
+    "start_time": "2025-05-13T05:54:49.413736Z",
+    "end_time": "2025-05-13T05:54:49.414153Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:8001",
+        "net.host.port": 8001,
+        "http.flavor": "1.1",
+        "http.target": "/imgplt/zips",
+        "http.url": "http://127.0.0.1:8001/imgplt/zips?sql=SELECT * FROM files",
+        "http.method": "GET",
+        "http.server_name": "localhost:8001",
+        "http.user_agent": "python-httpx/0.25.1",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 58462,
+        "http.route": "/imgplt/zips",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /imgplt/zips",
+    "context": {
+        "trace_id": "0x0f48c80c0d1811e2037e7f546772f710",
+        "span_id": "0xd742492f5ab85ce5",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:54:49.413568Z",
+    "end_time": "2025-05-13T05:54:49.414226Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/sqls http send",
+    "context": {
+        "trace_id": "0xcad3f598a55812420625cebeab0f0a79",
+        "span_id": "0x3aab4e2efa9d6b2b",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xc79978e8a1638f98",
+    "start_time": "2025-05-13T05:54:49.443983Z",
+    "end_time": "2025-05-13T05:54:49.443998Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/sqls http send",
+    "context": {
+        "trace_id": "0xcad3f598a55812420625cebeab0f0a79",
+        "span_id": "0xd1e19cb6cecb3a3e",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xc79978e8a1638f98",
+    "start_time": "2025-05-13T05:54:49.444023Z",
+    "end_time": "2025-05-13T05:54:49.444027Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /imgplt/sqls",
+    "context": {
+        "trace_id": "0xcad3f598a55812420625cebeab0f0a79",
+        "span_id": "0xc79978e8a1638f98",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x30f031d2b09212f7",
+    "start_time": "2025-05-13T05:54:49.443757Z",
+    "end_time": "2025-05-13T05:54:49.444031Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:8001",
+        "net.host.port": 8001,
+        "http.flavor": "1.1",
+        "http.target": "/imgplt/sqls",
+        "http.url": "http://127.0.0.1:8001/imgplt/sqls?query=SELECT * FROM files",
+        "http.method": "GET",
+        "http.server_name": "localhost:8001",
+        "http.user_agent": "python-httpx/0.25.1",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 58466,
+        "http.route": "/imgplt/sqls",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP GET /imgplt/sqls",
+    "context": {
+        "trace_id": "0xcad3f598a55812420625cebeab0f0a79",
+        "span_id": "0x30f031d2b09212f7",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:54:49.443636Z",
+    "end_time": "2025-05-13T05:54:49.444064Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "POST /topics/{topic} http receive",
+    "context": {
+        "trace_id": "0xffe745f2952e0f22cfba13fa73882ff1",
+        "span_id": "0xb0d164f690199e7f",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x327f4fe400e50862",
+    "start_time": "2025-05-13T05:54:49.471270Z",
+    "end_time": "2025-05-13T05:54:49.471283Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.request"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "POST /topics/{topic} http send",
+    "context": {
+        "trace_id": "0xffe745f2952e0f22cfba13fa73882ff1",
+        "span_id": "0xeec2b57dd8a26564",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x327f4fe400e50862",
+    "start_time": "2025-05-13T05:54:49.471706Z",
+    "end_time": "2025-05-13T05:54:49.471718Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.start",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "POST /topics/{topic} http send",
+    "context": {
+        "trace_id": "0xffe745f2952e0f22cfba13fa73882ff1",
+        "span_id": "0x955cdd02fe7df7ed",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x327f4fe400e50862",
+    "start_time": "2025-05-13T05:54:49.471738Z",
+    "end_time": "2025-05-13T05:54:49.471742Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "asgi.event.type": "http.response.body"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "POST /topics/{topic}",
+    "context": {
+        "trace_id": "0xffe745f2952e0f22cfba13fa73882ff1",
+        "span_id": "0x327f4fe400e50862",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xcb080788d2dccd26",
+    "start_time": "2025-05-13T05:54:49.471201Z",
+    "end_time": "2025-05-13T05:54:49.471746Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.scheme": "http",
+        "http.host": "127.0.0.1:8001",
+        "net.host.port": 8001,
+        "http.flavor": "1.1",
+        "http.target": "/topics/test-topic",
+        "http.url": "http://127.0.0.1:8001/topics/test-topic",
+        "http.method": "POST",
+        "http.server_name": "localhost:8001",
+        "http.user_agent": "python-httpx/0.25.1",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 58470,
+        "http.route": "/topics/{topic}",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "HTTP POST /topics/test-topic",
+    "context": {
+        "trace_id": "0xffe745f2952e0f22cfba13fa73882ff1",
+        "span_id": "0xcb080788d2dccd26",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T05:54:49.471074Z",
+    "end_time": "2025-05-13T05:54:49.471794Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}

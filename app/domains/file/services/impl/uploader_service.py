@@ -16,7 +16,7 @@ import aiofiles
 import uuid
 import os
 import logging
-from app.core.config import settings
+from app.common.config import settings
 from app.domains.file.services.impl.minio_memory_client import MinioMemoryClient
 from app.domains.file.services.impl.minio_prod_client import MinioProdClient
 
@@ -45,14 +45,14 @@ class UploaderService(UploaderInterface):
                 await out_file.write(chunk)
 
         file_size = os.path.getsize(temp_path)
-        from app.common.kafka_producer import KafkaMessageProducer
+        from app.common.kafka.producer_factory import get_kafka_producer
         if file_size < chunk_size:
             # 단일 업로드(20MB 미만)
             async with aiofiles.open(temp_path, 'rb') as f:
                 data = await f.read()
                 location = minio_client.upload_file(bucket, key, data)
                 os.remove(temp_path)
-                producer = KafkaMessageProducer()
+                producer = get_kafka_producer()
                 kafka_result = await producer.produce("file_metadata", {"filename": filename, "location": location})
                 # 검수(무조건 성공으로 가정)
                 if settings.ENV in ["production", "stage"]:

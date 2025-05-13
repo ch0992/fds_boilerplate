@@ -11,12 +11,12 @@
 
 from app.domains.file.services.interfaces.metadata_producer_interface import MetadataProducerInterface
 from app.domains.file.schemas.metadata import FileMetadataRequest, KafkaProduceResult
-from app.common.broker.impl.kafka_message_producer import KafkaMessageProducer
+from app.common.kafka.producer_factory import get_kafka_producer
 import json
 from app.domains.log.services.common.exceptions import capture_and_log
 
 # Initialize Kafka producer instance
-kafka_producer = KafkaMessageProducer()
+kafka_producer = get_kafka_producer()
 
 class MetadataProducerService(MetadataProducerInterface):
     """

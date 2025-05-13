@@ -10,7 +10,7 @@ from app.domains.log.services.common.tracing import init_tracer
 from app.domains.log.services.common.sentry import init_sentry
 from app.domains.log.services.common.middleware import install_exception_handlers, TraceLoggingMiddleware
 from app.domains.file.api.routes import router as file_router
-from app.core.config import settings
+from app.common.config import settings
 from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
 
 # 로그 파일 경로를 main.py 기준으로 file/file.log로 지정

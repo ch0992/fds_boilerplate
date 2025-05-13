@@ -1,8 +1,8 @@
 from fastapi import UploadFile
 from app.domains.gateway.services.interfaces.file_upload_interface import FileUploadInterface
 from app.domains.file.services.interfaces.uploader_interface import UploaderInterface
-from app.common.kafka_producer import KafkaMessageProducer
-from app.core.config import settings
+from app.common.kafka.producer_factory import get_kafka_producer
+from app.common.config import settings
 import json
 import logging
 import os

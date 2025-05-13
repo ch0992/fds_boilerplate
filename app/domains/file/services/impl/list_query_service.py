@@ -13,7 +13,8 @@
 
 from app.domains.file.services.interfaces.list_query_interface import ListQueryInterface
 from app.domains.file.schemas.listing import S3FileEntry
-from app.core.logging import get_tracer, capture_and_log
+from app.common.logging import get_tracer, capture_and_log
+from app.common.config import settings
 import os
 import boto3
 from typing import List
@@ -49,7 +50,7 @@ class ListQueryService(ListQueryInterface):
             aws_access_key_id=os.getenv("MINIO_ACCESS_KEY"),
             aws_secret_access_key=os.getenv("MINIO_SECRET_KEY"),
         )
-        from app.common.exceptions import SystemConfigException, NotFoundException
+        from app.common.utils.exceptions import SystemConfigException, NotFoundException
         bucket = os.getenv("MINIO_BUCKET")
         if not bucket:
             raise SystemConfigException("MINIO_BUCKET 환경변수가 설정되어 있지 않습니다.")

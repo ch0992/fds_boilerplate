@@ -1,4 +1,4 @@
-from app.core.config import settings
+from app.common.config import settings
 
 """
 [📄 auth_mode.py - Auth Mode Utility]
