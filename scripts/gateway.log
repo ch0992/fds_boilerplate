@@ -1,9 +1,8 @@
-[32m2025-05-13 17:33:22.418[0m | [1mINFO    [0m | [36mapp.common.logging[0m:[36msetup_logging[0m:[36m19[0m - [1mLoguru logging is configured.[0m
-2025-05-13 17:33:22,615 WARNING Overriding of current TracerProvider is not allowed [trace_id=- span_id=-]
-INFO:     Started server process [15319]
-2025-05-13 17:33:22,621 INFO Started server process [15319] [trace_id=- span_id=-]
+[32m2025-05-13 19:27:58.227[0m | [1mINFO    [0m | [36mapp.common.logging[0m:[36msetup_logging[0m:[36m25[0m - [1mLoguru logging is configured.[0m
+INFO:     Started server process [61435]
+2025-05-13 19:27:58,680 INFO Started server process [61435] [trace_id=- span_id=-]
 INFO:     Waiting for application startup.
-2025-05-13 17:33:22,622 INFO Waiting for application startup. [trace_id=- span_id=-]
+2025-05-13 19:27:58,681 INFO Waiting for application startup. [trace_id=- span_id=-]
 /gateway/openapi.json {'HEAD', 'GET'}
 /gateway/docs {'HEAD', 'GET'}
 /docs/oauth2-redirect {'HEAD', 'GET'}
@@ -27,28 +26,55 @@ INFO:     Waiting for application startup.
 /gateway/file/ping {'GET'}
 /gateway/data/ping {'GET'}
 /gateway/log/ping {'GET'}
-[32m2025-05-13 17:33:22.622[0m | [1mINFO    [0m | [36mapp.domains.gateway.main[0m:[36mon_startup[0m:[36m89[0m - [1mGateway service started.[0m
-[32m2025-05-13 17:33:22.622[0m | [1mINFO    [0m | [36mapp.domains.gateway.main[0m:[36mon_startup[0m:[36m90[0m - [1m[gateway] AUTH_MODE=local[0m
-[32m2025-05-13 17:33:22.622[0m | [1mINFO    [0m | [36mapp.domains.gateway.main[0m:[36mon_startup[0m:[36m92[0m - [1m[gateway] AUTH_LOCAL_TOKEN=dev-token[0m
+[32m2025-05-13 19:27:58.681[0m | [1mINFO    [0m | [36mapp.domains.gateway.main[0m:[36mon_startup[0m:[36m110[0m - [1mGateway service started.[0m
+[32m2025-05-13 19:27:58.681[0m | [1mINFO    [0m | [36mapp.domains.gateway.main[0m:[36mon_startup[0m:[36m111[0m - [1m[gateway] AUTH_MODE=local[0m
+[32m2025-05-13 19:27:58.681[0m | [1mINFO    [0m | [36mapp.domains.gateway.main[0m:[36mon_startup[0m:[36m113[0m - [1m[gateway] AUTH_LOCAL_TOKEN=dev-token[0m
 INFO:     Application startup complete.
-2025-05-13 17:33:22,622 INFO Application startup complete. [trace_id=- span_id=-]
+2025-05-13 19:27:58,681 INFO Application startup complete. [trace_id=- span_id=-]
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-2025-05-13 17:33:22,622 INFO Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit) [trace_id=- span_id=-]
-[32m2025-05-13 17:33:23.711[0m | [1mINFO    [0m | [36mapp.domains.log.services.common.middleware[0m:[36mdispatch[0m:[36m21[0m - [1m[access] GET /gateway/docs | path=http://localhost:8000/gateway/docs | trace_id=349f2f8f01c670c19ceec963411fb876 | span_id=366d7ea8f30b84ba[0m
-INFO:     127.0.0.1:58978 - "GET /gateway/docs HTTP/1.1" 200 OK
-[32m2025-05-13 17:33:24.283[0m | [1mINFO    [0m | [36mapp.domains.log.services.common.middleware[0m:[36mdispatch[0m:[36m21[0m - [1m[access] GET /gateway/openapi.json | path=http://localhost:8000/gateway/openapi.json | trace_id=3cf4fe66cc1f6770f857dea07ab36af9 | span_id=b401f703e412dc96[0m
-INFO:     127.0.0.1:58978 - "GET /gateway/openapi.json HTTP/1.1" 200 OK
+2025-05-13 19:27:58,682 INFO Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit) [trace_id=- span_id=-]
+[32m2025-05-13 19:28:29.878[0m | [1mINFO    [0m | [36mapp.domains.log.services.common.middleware[0m:[36mdispatch[0m:[36m21[0m - [1m[access] GET /gateway/health | path=http://localhost:8000/gateway/health | trace_id=5a503615df9ff77dea845175ad0bf9fc | span_id=210d12c967466471[0m
+INFO:     127.0.0.1:56067 - "GET /gateway/health HTTP/1.1" 404 Not Found
+{
+    "name": "HTTP GET /gateway/health",
+    "context": {
+        "trace_id": "0x5a503615df9ff77dea845175ad0bf9fc",
+        "span_id": "0x210d12c967466471",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T10:28:29.878351Z",
+    "end_time": "2025-05-13T10:28:29.883111Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+[32m2025-05-13 19:28:37.011[0m | [1mINFO    [0m | [36mapp.domains.log.services.common.middleware[0m:[36mdispatch[0m:[36m21[0m - [1m[access] GET /gateway/docs | path=http://localhost:8000/gateway/docs | trace_id=76c01267b0e12c53637b7171c4f11875 | span_id=2635b00448030b6d[0m
+INFO:     127.0.0.1:56084 - "GET /gateway/docs HTTP/1.1" 200 OK
 {
     "name": "HTTP GET /gateway/docs",
     "context": {
-        "trace_id": "0x349f2f8f01c670c19ceec963411fb876",
-        "span_id": "0x366d7ea8f30b84ba",
+        "trace_id": "0x76c01267b0e12c53637b7171c4f11875",
+        "span_id": "0x2635b00448030b6d",
         "trace_state": "[]"
     },
     "kind": "SpanKind.INTERNAL",
     "parent_id": null,
-    "start_time": "2025-05-13T08:33:23.711907Z",
-    "end_time": "2025-05-13T08:33:23.712355Z",
+    "start_time": "2025-05-13T10:28:37.011895Z",
+    "end_time": "2025-05-13T10:28:37.012803Z",
     "status": {
         "status_code": "UNSET"
     },
@@ -65,75 +91,31 @@ INFO:     127.0.0.1:58978 - "GET /gateway/openapi.json HTTP/1.1" 200 OK
         "schema_url": ""
     }
 }
+[32m2025-05-13 19:28:43.866[0m | [1mINFO    [0m | [36mapp.domains.log.services.common.middleware[0m:[36mdispatch[0m:[36m21[0m - [1m[access] GET /gateway/data/topics | path=http://localhost:8000/gateway/data/topics | trace_id=93a220a0061f0e41f26899268c680a33 | span_id=9108220621bc7479[0m
+[ServiceClient] Request: GET http://localhost:8002/topics | kwargs={'headers': {}}
+[ServiceClient][ERROR] Attempt 1/3: All connection attempts failed | type=<class 'httpx.ConnectError'>
+[ServiceClient][ERROR] Attempt 2/3: All connection attempts failed | type=<class 'httpx.ConnectError'>
+[ServiceClient][ERROR] Attempt 3/3: All connection attempts failed | type=<class 'httpx.ConnectError'>
+[ServiceClient][FAIL] Final failure for GET http://localhost:8002/topics
+INFO:     127.0.0.1:56100 - "GET /gateway/data/topics HTTP/1.1" 500 Internal Server Error
 {
-    "name": "HTTP GET /gateway/openapi.json",
+    "name": "HTTP GET /gateway/data/topics",
     "context": {
-        "trace_id": "0x3cf4fe66cc1f6770f857dea07ab36af9",
-        "span_id": "0xb401f703e412dc96",
+        "trace_id": "0x93a220a0061f0e41f26899268c680a33",
+        "span_id": "0x9108220621bc7479",
         "trace_state": "[]"
     },
     "kind": "SpanKind.INTERNAL",
     "parent_id": null,
-    "start_time": "2025-05-13T08:33:24.283205Z",
-    "end_time": "2025-05-13T08:33:24.295187Z",
+    "start_time": "2025-05-13T10:28:43.866072Z",
+    "end_time": "2025-05-13T10:28:44.572895Z",
     "status": {
-        "status_code": "UNSET"
+        "status_code": "ERROR"
     },
-    "attributes": {},
-    "events": [],
-    "links": [],
-    "resource": {
-        "attributes": {
-            "telemetry.sdk.language": "python",
-            "telemetry.sdk.name": "opentelemetry",
-            "telemetry.sdk.version": "1.30.0",
-            "service.name": "filedepot-service"
-        },
-        "schema_url": ""
-    }
-}
-[32m2025-05-13 17:33:37.230[0m | [1mINFO    [0m | [36mapp.domains.log.services.common.middleware[0m:[36mdispatch[0m:[36m21[0m - [1m[access] POST /gateway/file/upload/file-meta/test | path=http://localhost:8000/gateway/file/upload/file-meta/test | trace_id=98066ac251a9539f1d018d37765ae9ce | span_id=4c6cddf577663a7e[0m
-[32m2025-05-13 17:33:38.588[0m | [1mINFO    [0m | [36mapp.domains.gateway.services.impl.file_upload_service[0m:[36mupload_file_and_metadata_file[0m:[36m29[0m - [1m[Gateway] 파일 업로드 요청 시작: filename=1. CitrixWorkspaceApp_MAC_2107 (1).dmg, content_type=application/x-apple-diskimage[0m
-[32m2025-05-13 17:33:38.588[0m | [1mINFO    [0m | [36mapp.domains.gateway.services.impl.file_upload_service[0m:[36mupload_file_and_metadata_file[0m:[36m34[0m - [1m[Gateway] 파일 크기: 252677436 bytes[0m
-[32m2025-05-13 17:33:38.589[0m | [1mINFO    [0m | [36mapp.domains.gateway.services.impl.file_upload_service[0m:[36mupload_file_and_metadata_file[0m:[36m40[0m - [1m[Gateway] 메타데이터 파싱 시도: *test.json[0m
-[32m2025-05-13 17:33:38.589[0m | [1mINFO    [0m | [36mapp.domains.gateway.services.impl.file_upload_service[0m:[36m_parse_metadata_file[0m:[36m84[0m - [1m[Gateway] 메타데이터 파일 파싱 시도: *test.json[0m
-[32m2025-05-13 17:33:38.589[0m | [1mINFO    [0m | [36mapp.domains.gateway.services.impl.file_upload_service[0m:[36m_parse_metadata_file[0m:[36m88[0m - [1m[Gateway] 메타데이터 파일 파싱 성공: file_id='abc123' filename='test.png' owner='user1' size=12345 user=None[0m
-[32m2025-05-13 17:33:38.694[0m | [1mINFO    [0m | [36mapp.domains.file.services.impl.uploader_service[0m:[36mupload_file[0m:[36m66[0m - [1m[멀티파트 업로드 시작] 파일명=02240171-2f72-43ba-84ee-f13b0844b66b_1. CitrixWorkspaceApp_MAC_2107 (1).dmg, 전체용량=252677436 bytes, chunk=20971520 bytes[0m
-[32m2025-05-13 17:33:38.697[0m | [1mINFO    [0m | [36mapp.domains.file.services.impl.uploader_service[0m:[36mupload_file[0m:[36m78[0m - [1m[업로드 진행] 20971520/252677436 bytes (8%) part=1[0m
-[32m2025-05-13 17:33:38.700[0m | [1mINFO    [0m | [36mapp.domains.file.services.impl.uploader_service[0m:[36mupload_file[0m:[36m78[0m - [1m[업로드 진행] 41943040/252677436 bytes (16%) part=2[0m
-[32m2025-05-13 17:33:38.702[0m | [1mINFO    [0m | [36mapp.domains.file.services.impl.uploader_service[0m:[36mupload_file[0m:[36m78[0m - [1m[업로드 진행] 62914560/252677436 bytes (24%) part=3[0m
-[32m2025-05-13 17:33:38.707[0m | [1mINFO    [0m | [36mapp.domains.file.services.impl.uploader_service[0m:[36mupload_file[0m:[36m78[0m - [1m[업로드 진행] 83886080/252677436 bytes (33%) part=4[0m
-[32m2025-05-13 17:33:38.718[0m | [1mINFO    [0m | [36mapp.domains.file.services.impl.uploader_service[0m:[36mupload_file[0m:[36m78[0m - [1m[업로드 진행] 104857600/252677436 bytes (41%) part=5[0m
-[32m2025-05-13 17:33:38.722[0m | [1mINFO    [0m | [36mapp.domains.file.services.impl.uploader_service[0m:[36mupload_file[0m:[36m78[0m - [1m[업로드 진행] 125829120/252677436 bytes (49%) part=6[0m
-[32m2025-05-13 17:33:38.725[0m | [1mINFO    [0m | [36mapp.domains.file.services.impl.uploader_service[0m:[36mupload_file[0m:[36m78[0m - [1m[업로드 진행] 146800640/252677436 bytes (58%) part=7[0m
-[32m2025-05-13 17:33:38.730[0m | [1mINFO    [0m | [36mapp.domains.file.services.impl.uploader_service[0m:[36mupload_file[0m:[36m78[0m - [1m[업로드 진행] 167772160/252677436 bytes (66%) part=8[0m
-[32m2025-05-13 17:33:38.736[0m | [1mINFO    [0m | [36mapp.domains.file.services.impl.uploader_service[0m:[36mupload_file[0m:[36m78[0m - [1m[업로드 진행] 188743680/252677436 bytes (74%) part=9[0m
-[32m2025-05-13 17:33:38.741[0m | [1mINFO    [0m | [36mapp.domains.file.services.impl.uploader_service[0m:[36mupload_file[0m:[36m78[0m - [1m[업로드 진행] 209715200/252677436 bytes (82%) part=10[0m
-[32m2025-05-13 17:33:38.745[0m | [1mINFO    [0m | [36mapp.domains.file.services.impl.uploader_service[0m:[36mupload_file[0m:[36m78[0m - [1m[업로드 진행] 230686720/252677436 bytes (91%) part=11[0m
-[32m2025-05-13 17:33:38.748[0m | [1mINFO    [0m | [36mapp.domains.file.services.impl.uploader_service[0m:[36mupload_file[0m:[36m78[0m - [1m[업로드 진행] 251658240/252677436 bytes (99%) part=12[0m
-[32m2025-05-13 17:33:38.748[0m | [1mINFO    [0m | [36mapp.domains.file.services.impl.uploader_service[0m:[36mupload_file[0m:[36m78[0m - [1m[업로드 진행] 252677436/252677436 bytes (100%) part=13[0m
-[DummyKafkaProducer] topic=file_metadata, value={'filename': '02240171-2f72-43ba-84ee-f13b0844b66b_1. CitrixWorkspaceApp_MAC_2107 (1).dmg', 'location': 'memory://filedepot-bucket/02240171-2f72-43ba-84ee-f13b0844b66b_1. CitrixWorkspaceApp_MAC_2107 (1).dmg'}
-[32m2025-05-13 17:33:38.753[0m | [1mINFO    [0m | [36mapp.domains.file.services.impl.uploader_service[0m:[36mupload_file[0m:[36m90[0m - [1m[검수] 파일 02240171-2f72-43ba-84ee-f13b0844b66b_1. CitrixWorkspaceApp_MAC_2107 (1).dmg 업로드 후 무결성 검증 (dummy)[0m
-[32m2025-05-13 17:33:38.753[0m | [1mINFO    [0m | [36mapp.domains.file.services.impl.uploader_service[0m:[36mupload_file[0m:[36m91[0m - [1m[멀티파트 업로드 완료] 파일명=02240171-2f72-43ba-84ee-f13b0844b66b_1. CitrixWorkspaceApp_MAC_2107 (1).dmg, 전체용량=252677436 bytes[0m
-[32m2025-05-13 17:33:38.758[0m | [1mINFO    [0m | [36mapp.domains.gateway.services.impl.file_upload_service[0m:[36m_upload_file_and_produce_metadata[0m:[36m193[0m - [1m[Gateway] 파일 업로드 응답: {"filename": "02240171-2f72-43ba-84ee-f13b0844b66b_1. CitrixWorkspaceApp_MAC_2107 (1).dmg", "status": "uploaded", "location": "memory://filedepot-bucket/02240171-2f72-43ba-84ee-f13b0844b66b_1. CitrixWorkspaceApp_MAC_2107 (1).dmg", "error": "", "kafka_result": {"topic": "file_metadata", "status": "dummy"}}[0m
-[ServiceClient] Request: POST http://localhost:8001/topics/test | kwargs={'json': {'file_id': 'abc123', 'filename': 'test.png', 'owner': 'user1', 'size': 12345, 'user': None}}
-[ServiceClient] Response: 200 {"topic":"test","message":"{\"file_id\": \"abc123\", \"filename\": \"test.png\", \"owner\": \"user1\", \"size\": 12345, \"user\": null}","status":"queued"}
-INFO:     127.0.0.1:59001 - "POST /gateway/file/upload/file-meta/test HTTP/1.1" 200 OK
-{
-    "name": "HTTP POST /gateway/file/upload/file-meta/test",
-    "context": {
-        "trace_id": "0x98066ac251a9539f1d018d37765ae9ce",
-        "span_id": "0x4c6cddf577663a7e",
-        "trace_state": "[]"
+    "attributes": {
+        "http.status_code": 500,
+        "http.exception.detail": ""
     },
-    "kind": "SpanKind.INTERNAL",
-    "parent_id": null,
-    "start_time": "2025-05-13T08:33:37.230458Z",
-    "end_time": "2025-05-13T08:33:38.788586Z",
-    "status": {
-        "status_code": "UNSET"
-    },
-    "attributes": {},
     "events": [],
     "links": [],
     "resource": {

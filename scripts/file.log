@@ -1,171 +1,52 @@
-[32m2025-05-13 17:33:22.751[0m | [1mINFO    [0m | [36mapp.common.logging[0m:[36msetup_logging[0m:[36m19[0m - [1mLoguru logging is configured.[0m
-2025-05-13 17:33:22,757 WARNING Overriding of current TracerProvider is not allowed [trace_id=- span_id=-]
-INFO:     Started server process [15320]
-2025-05-13 17:33:22,760 INFO Started server process [15320] [trace_id=- span_id=-]
-INFO:     Waiting for application startup.
-2025-05-13 17:33:22,761 INFO Waiting for application startup. [trace_id=- span_id=-]
-INFO:     Application startup complete.
-2025-05-13 17:33:22,761 INFO Application startup complete. [trace_id=- span_id=-]
-INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
-2025-05-13 17:33:22,761 INFO Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit) [trace_id=- span_id=-]
-[32m2025-05-13 17:33:38.786[0m | [1mINFO    [0m | [36mapp.domains.log.services.common.middleware[0m:[36mdispatch[0m:[36m21[0m - [1m[access] POST /topics/test | path=http://localhost:8001/topics/test | trace_id=9d5800dd3ec7eabf5cf80a4e9235621d | span_id=70e39858b802516[0m
-[32m2025-05-13 17:33:38.787[0m | [1mINFO    [0m | [36mapp.domains.file.api.routes.routes[0m:[36mproduce_metadata_to_kafka[0m:[36m119[0m - [1m[FILE] /topics/test called with metadata: {'file_id': 'abc123', 'filename': 'test.png', 'owner': 'user1', 'size': 12345, 'user': None}[0m
-[DummyKafkaProducer] topic=test, value={'file_id': 'abc123', 'filename': 'test.png', 'owner': 'user1', 'size': 12345, 'user': None}
-[32m2025-05-13 17:33:38.787[0m | [1mINFO    [0m | [36mapp.domains.file.api.routes.routes[0m:[36mproduce_metadata_to_kafka[0m:[36m121[0m - [1m[FILE] Kafka produce result: topic='test' message='{"file_id": "abc123", "filename": "test.png", "owner": "user1", "size": 12345, "user": null}' status='queued'[0m
-INFO:     127.0.0.1:59006 - "POST /topics/test HTTP/1.1" 200 OK
-{
-    "name": "POST /topics/{topic} http receive",
-    "context": {
-        "trace_id": "0x9d5800dd3ec7eabf5cf80a4e9235621d",
-        "span_id": "0x32c22b648aff0608",
-        "trace_state": "[]"
-    },
-    "kind": "SpanKind.INTERNAL",
-    "parent_id": "0x071d5dab9e6a4b67",
-    "start_time": "2025-05-13T08:33:38.786908Z",
-    "end_time": "2025-05-13T08:33:38.786919Z",
-    "status": {
-        "status_code": "UNSET"
-    },
-    "attributes": {
-        "asgi.event.type": "http.request"
-    },
-    "events": [],
-    "links": [],
-    "resource": {
-        "attributes": {
-            "telemetry.sdk.language": "python",
-            "telemetry.sdk.name": "opentelemetry",
-            "telemetry.sdk.version": "1.30.0",
-            "service.name": "filedepot-service"
-        },
-        "schema_url": ""
-    }
-}
-{
-    "name": "POST /topics/{topic} http send",
-    "context": {
-        "trace_id": "0x9d5800dd3ec7eabf5cf80a4e9235621d",
-        "span_id": "0xb193643624cf9f96",
-        "trace_state": "[]"
-    },
-    "kind": "SpanKind.INTERNAL",
-    "parent_id": "0x071d5dab9e6a4b67",
-    "start_time": "2025-05-13T08:33:38.787451Z",
-    "end_time": "2025-05-13T08:33:38.787481Z",
-    "status": {
-        "status_code": "UNSET"
-    },
-    "attributes": {
-        "asgi.event.type": "http.response.start",
-        "http.status_code": 200
-    },
-    "events": [],
-    "links": [],
-    "resource": {
-        "attributes": {
-            "telemetry.sdk.language": "python",
-            "telemetry.sdk.name": "opentelemetry",
-            "telemetry.sdk.version": "1.30.0",
-            "service.name": "filedepot-service"
-        },
-        "schema_url": ""
-    }
-}
-{
-    "name": "POST /topics/{topic} http send",
-    "context": {
-        "trace_id": "0x9d5800dd3ec7eabf5cf80a4e9235621d",
-        "span_id": "0xfbaad287928270a1",
-        "trace_state": "[]"
-    },
-    "kind": "SpanKind.INTERNAL",
-    "parent_id": "0x071d5dab9e6a4b67",
-    "start_time": "2025-05-13T08:33:38.787522Z",
-    "end_time": "2025-05-13T08:33:38.787527Z",
-    "status": {
-        "status_code": "UNSET"
-    },
-    "attributes": {
-        "asgi.event.type": "http.response.body"
-    },
-    "events": [],
-    "links": [],
-    "resource": {
-        "attributes": {
-            "telemetry.sdk.language": "python",
-            "telemetry.sdk.name": "opentelemetry",
-            "telemetry.sdk.version": "1.30.0",
-            "service.name": "filedepot-service"
-        },
-        "schema_url": ""
-    }
-}
-{
-    "name": "POST /topics/{topic}",
-    "context": {
-        "trace_id": "0x9d5800dd3ec7eabf5cf80a4e9235621d",
-        "span_id": "0x071d5dab9e6a4b67",
-        "trace_state": "[]"
-    },
-    "kind": "SpanKind.INTERNAL",
-    "parent_id": "0x070e39858b802516",
-    "start_time": "2025-05-13T08:33:38.786809Z",
-    "end_time": "2025-05-13T08:33:38.787536Z",
-    "status": {
-        "status_code": "UNSET"
-    },
-    "attributes": {
-        "http.scheme": "http",
-        "http.host": "127.0.0.1:8001",
-        "net.host.port": 8001,
-        "http.flavor": "1.1",
-        "http.target": "/topics/test",
-        "http.url": "http://127.0.0.1:8001/topics/test",
-        "http.method": "POST",
-        "http.server_name": "localhost:8001",
-        "http.user_agent": "python-httpx/0.25.1",
-        "net.peer.ip": "127.0.0.1",
-        "net.peer.port": 59006,
-        "http.route": "/topics/{topic}",
-        "http.status_code": 200
-    },
-    "events": [],
-    "links": [],
-    "resource": {
-        "attributes": {
-            "telemetry.sdk.language": "python",
-            "telemetry.sdk.name": "opentelemetry",
-            "telemetry.sdk.version": "1.30.0",
-            "service.name": "filedepot-service"
-        },
-        "schema_url": ""
-    }
-}
-{
-    "name": "HTTP POST /topics/test",
-    "context": {
-        "trace_id": "0x9d5800dd3ec7eabf5cf80a4e9235621d",
-        "span_id": "0x070e39858b802516",
-        "trace_state": "[]"
-    },
-    "kind": "SpanKind.INTERNAL",
-    "parent_id": null,
-    "start_time": "2025-05-13T08:33:38.786267Z",
-    "end_time": "2025-05-13T08:33:38.787625Z",
-    "status": {
-        "status_code": "UNSET"
-    },
-    "attributes": {},
-    "events": [],
-    "links": [],
-    "resource": {
-        "attributes": {
-            "telemetry.sdk.language": "python",
-            "telemetry.sdk.name": "opentelemetry",
-            "telemetry.sdk.version": "1.30.0",
-            "service.name": "filedepot-service"
-        },
-        "schema_url": ""
-    }
-}
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/bin/uvicorn", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/uvicorn/main.py", line 425, in main
+    run(app, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/uvicorn/main.py", line 447, in run
+    server.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/uvicorn/server.py", line 68, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1517, in uvloop.loop.Loop.run_until_complete
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/uvicorn/server.py", line 76, in serve
+    config.load()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/uvicorn/config.py", line 448, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/uvicorn/importer.py", line 24, in import_from_string
+    raise exc from None
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/ygtoken/workspace/fds_boilerplate/app/domains/file/main.py", line 12, in <module>
+    from app.common.remote_log_handler import RemoteLogHandler
+ModuleNotFoundError: No module named 'app.common.remote_log_handler'

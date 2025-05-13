@@ -1,9 +1,108 @@
-[32m2025-05-13 17:33:22.528[0m | [1mINFO    [0m | [36mapp.common.logging[0m:[36msetup_logging[0m:[36m19[0m - [1mLoguru logging is configured.[0m
-INFO:     Started server process [15322]
-2025-05-13 17:33:22,535 INFO Started server process [15322] [trace_id=- span_id=-]
+[32m2025-05-13 19:27:58.313[0m | [1mINFO    [0m | [36mapp.common.logging[0m:[36msetup_logging[0m:[36m25[0m - [1mLoguru logging is configured.[0m
+INFO:     Started server process [61438]
+2025-05-13 19:27:58,388 INFO Started server process [61438] [trace_id=- span_id=-]
 INFO:     Waiting for application startup.
-2025-05-13 17:33:22,535 INFO Waiting for application startup. [trace_id=- span_id=-]
+2025-05-13 19:27:58,390 INFO Waiting for application startup. [trace_id=- span_id=-]
 INFO:     Application startup complete.
-2025-05-13 17:33:22,535 INFO Application startup complete. [trace_id=- span_id=-]
+2025-05-13 19:27:58,391 INFO Application startup complete. [trace_id=- span_id=-]
 INFO:     Uvicorn running on http://0.0.0.0:8003 (Press CTRL+C to quit)
-2025-05-13 17:33:22,536 INFO Uvicorn running on http://0.0.0.0:8003 (Press CTRL+C to quit) [trace_id=- span_id=-]
+2025-05-13 19:27:58,404 INFO Uvicorn running on http://0.0.0.0:8003 (Press CTRL+C to quit) [trace_id=- span_id=-]
+[32m2025-05-13 19:28:29.900[0m | [1mINFO    [0m | [36mapp.domains.log.services.common.middleware[0m:[36mdispatch[0m:[36m21[0m - [1m[access] POST /event | path=http://localhost:8003/event | trace_id=2bb0923cfbf7a65a1edc4fcac68ee377 | span_id=b20108edf9a50ef2[0m
+LOG_FILE_PATH /Users/ygtoken/workspace/fds_boilerplate/app/domains/log/total_log/app.log
+RECEIVED {'timestamp': 1747132109.8814359, 'level': 'INFO', 'message': 'GET /gateway/health 404', 'domain': 'gateway', 'host': 'localhost'}
+WRITE SUCCESS 2025-05-13T10:28:29.881436 [INFO] gateway@localhost - GET /gateway/health 404
+
+INFO:     127.0.0.1:56069 - "POST /event HTTP/1.1" 200 OK
+{
+    "name": "HTTP POST /event",
+    "context": {
+        "trace_id": "0x2bb0923cfbf7a65a1edc4fcac68ee377",
+        "span_id": "0xb20108edf9a50ef2",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T10:28:29.900454Z",
+    "end_time": "2025-05-13T10:28:29.904517Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+[32m2025-05-13 19:28:37.014[0m | [1mINFO    [0m | [36mapp.domains.log.services.common.middleware[0m:[36mdispatch[0m:[36m21[0m - [1m[access] POST /event | path=http://localhost:8003/event | trace_id=2dd782c38aec9af93a27308274d5575a | span_id=d3f2132e888bbd40[0m
+LOG_FILE_PATH /Users/ygtoken/workspace/fds_boilerplate/app/domains/log/total_log/app.log
+RECEIVED {'timestamp': 1747132117.012416, 'level': 'INFO', 'message': 'GET /gateway/docs 200', 'domain': 'gateway', 'host': 'localhost'}
+WRITE SUCCESS 2025-05-13T10:28:37.012416 [INFO] gateway@localhost - GET /gateway/docs 200
+
+INFO:     127.0.0.1:56087 - "POST /event HTTP/1.1" 200 OK
+{
+    "name": "HTTP POST /event",
+    "context": {
+        "trace_id": "0x2dd782c38aec9af93a27308274d5575a",
+        "span_id": "0xd3f2132e888bbd40",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T10:28:37.014267Z",
+    "end_time": "2025-05-13T10:28:37.015151Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}
+[32m2025-05-13 19:28:44.575[0m | [1mINFO    [0m | [36mapp.domains.log.services.common.middleware[0m:[36mdispatch[0m:[36m21[0m - [1m[access] POST /event | path=http://localhost:8003/event | trace_id=3e49c254b473bd18aae53027999b6490 | span_id=7dca5c8b29c2935c[0m
+LOG_FILE_PATH /Users/ygtoken/workspace/fds_boilerplate/app/domains/log/total_log/app.log
+RECEIVED {'timestamp': 1747132124.572201, 'level': 'INFO', 'message': 'GET /gateway/data/topics 500', 'domain': 'gateway', 'host': 'localhost'}
+WRITE SUCCESS 2025-05-13T10:28:44.572201 [INFO] gateway@localhost - GET /gateway/data/topics 500
+
+INFO:     127.0.0.1:56110 - "POST /event HTTP/1.1" 200 OK
+{
+    "name": "HTTP POST /event",
+    "context": {
+        "trace_id": "0x3e49c254b473bd18aae53027999b6490",
+        "span_id": "0x7dca5c8b29c2935c",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-05-13T10:28:44.575540Z",
+    "end_time": "2025-05-13T10:28:44.578361Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.30.0",
+            "service.name": "filedepot-service"
+        },
+        "schema_url": ""
+    }
+}

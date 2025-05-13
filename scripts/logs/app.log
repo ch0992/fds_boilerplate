@@ -1,103 +1,32 @@
-2025-05-13 17:23:02.269 | INFO     | app.common.logging:setup_logging:19 - Loguru logging is configured.
-2025-05-13 17:23:02.380 | INFO     | app.common.logging:setup_logging:19 - Loguru logging is configured.
-2025-05-13 17:23:02.392 | INFO     | app.common.logging:setup_logging:19 - Loguru logging is configured.
-2025-05-13 17:23:02.612 | INFO     | app.common.logging:setup_logging:19 - Loguru logging is configured.
-2025-05-13 17:24:09.462 | INFO     | app.common.logging:setup_logging:19 - Loguru logging is configured.
-2025-05-13 17:24:09.572 | INFO     | app.common.logging:setup_logging:19 - Loguru logging is configured.
-2025-05-13 17:24:09.582 | INFO     | app.common.logging:setup_logging:19 - Loguru logging is configured.
-2025-05-13 17:24:09.674 | INFO     | app.domains.gateway.main:on_startup:89 - Gateway service started.
-2025-05-13 17:24:09.674 | INFO     | app.domains.gateway.main:on_startup:90 - [gateway] AUTH_MODE=local
-2025-05-13 17:24:09.674 | INFO     | app.domains.gateway.main:on_startup:92 - [gateway] AUTH_LOCAL_TOKEN=dev-token
-2025-05-13 17:24:09.800 | INFO     | app.common.logging:setup_logging:19 - Loguru logging is configured.
-2025-05-13 17:24:10.594 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] GET /gateway/docs | path=http://localhost:8000/gateway/docs | trace_id=3d7e1cb5793af2f0a5f967cc2f1eb2fa | span_id=52c96cbab881887
-2025-05-13 17:24:11.437 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] GET /gateway/openapi.json | path=http://localhost:8000/gateway/openapi.json | trace_id=1671d1d6b91561b01af88cebf94d3a63 | span_id=9156f6cbf180ba6a
-2025-05-13 17:25:00.701 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] POST /file/imgplt/zips | path=http://localhost:8003/file/imgplt/zips | trace_id=2237e81175a109bb20d4d5643f00ce3e | span_id=f1c3b1dfc2757ac8
-2025-05-13 17:25:23.993 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] POST /gateway/file/imgplt/zips | path=http://localhost:8003/gateway/file/imgplt/zips | trace_id=e91ae7385cce672aa95e0d94e69756f0 | span_id=9e914d968bb264ca
-2025-05-13 17:30:43.413 | INFO     | app.common.logging:setup_logging:19 - Loguru logging is configured.
-2025-05-13 17:30:43.515 | INFO     | app.common.logging:setup_logging:19 - Loguru logging is configured.
-2025-05-13 17:30:43.525 | INFO     | app.common.logging:setup_logging:19 - Loguru logging is configured.
-2025-05-13 17:30:43.607 | INFO     | app.domains.gateway.main:on_startup:89 - Gateway service started.
-2025-05-13 17:30:43.607 | INFO     | app.domains.gateway.main:on_startup:90 - [gateway] AUTH_MODE=local
-2025-05-13 17:30:43.607 | INFO     | app.domains.gateway.main:on_startup:92 - [gateway] AUTH_LOCAL_TOKEN=dev-token
-2025-05-13 17:30:43.695 | INFO     | app.common.logging:setup_logging:19 - Loguru logging is configured.
-2025-05-13 17:30:58.256 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] POST /gateway/file/upload/file-meta/test | path=http://localhost:8000/gateway/file/upload/file-meta/test | trace_id=3d69bf4116f22da804635f88f41987e4 | span_id=f20930962db09635
-2025-05-13 17:30:59.674 | INFO     | app.domains.gateway.services.impl.file_upload_service:upload_file_and_metadata_file:29 - [Gateway] 파일 업로드 요청 시작: filename=1. CitrixWorkspaceApp_MAC_2107 (1).dmg, content_type=application/x-apple-diskimage
-2025-05-13 17:30:59.674 | INFO     | app.domains.gateway.services.impl.file_upload_service:upload_file_and_metadata_file:34 - [Gateway] 파일 크기: 252677436 bytes
-2025-05-13 17:30:59.674 | INFO     | app.domains.gateway.services.impl.file_upload_service:upload_file_and_metadata_file:40 - [Gateway] 메타데이터 파싱 시도: *test.json
-2025-05-13 17:30:59.674 | INFO     | app.domains.gateway.services.impl.file_upload_service:_parse_metadata_file:84 - [Gateway] 메타데이터 파일 파싱 시도: *test.json
-2025-05-13 17:30:59.675 | INFO     | app.domains.gateway.services.impl.file_upload_service:_parse_metadata_file:88 - [Gateway] 메타데이터 파일 파싱 성공: file_id='abc123' filename='test.png' owner='user1' size=12345 user=None
-2025-05-13 17:30:59.766 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:65 - [멀티파트 업로드 시작] 파일명=ae6b8c3f-ea21-41d6-bee1-0e4fdf69c9e6_1. CitrixWorkspaceApp_MAC_2107 (1).dmg, 전체용량=252677436 bytes, chunk=20971520 bytes
-2025-05-13 17:30:59.770 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 20971520/252677436 bytes (8%) part=1
-2025-05-13 17:30:59.773 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 41943040/252677436 bytes (16%) part=2
-2025-05-13 17:30:59.776 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 62914560/252677436 bytes (24%) part=3
-2025-05-13 17:30:59.779 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 83886080/252677436 bytes (33%) part=4
-2025-05-13 17:30:59.783 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 104857600/252677436 bytes (41%) part=5
-2025-05-13 17:30:59.788 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 125829120/252677436 bytes (49%) part=6
-2025-05-13 17:30:59.792 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 146800640/252677436 bytes (58%) part=7
-2025-05-13 17:30:59.799 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 167772160/252677436 bytes (66%) part=8
-2025-05-13 17:30:59.803 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 188743680/252677436 bytes (74%) part=9
-2025-05-13 17:30:59.807 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 209715200/252677436 bytes (82%) part=10
-2025-05-13 17:30:59.811 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 230686720/252677436 bytes (91%) part=11
-2025-05-13 17:30:59.815 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 251658240/252677436 bytes (99%) part=12
-2025-05-13 17:30:59.815 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 252677436/252677436 bytes (100%) part=13
-2025-05-13 17:30:59.820 | ERROR    | app.domains.gateway.services.impl.file_upload_service:upload_file_and_metadata_file:48 - [Gateway] 전체 업로드 실패: name 'KafkaMessageProducer' is not defined
-2025-05-13 17:30:59.820 | WARNING  | app.domains.log.services.common.sentry:capture_exception:31 - [Sentry fallback] SENTRY_DSN 미설정, 예외만 출력: name 'KafkaMessageProducer' is not defined
-2025-05-13 17:30:59.826 | ERROR    | app.domains.gateway.main:global_exception_handler:71 - [Global Exception Handler] POST http://localhost:8000/gateway/file/upload/file-meta/test - name 'KafkaMessageProducer' is not defined
-2025-05-13 17:33:13.316 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] POST /gateway/file/upload/file-meta/test | path=http://localhost:8000/gateway/file/upload/file-meta/test | trace_id=815b599c13ad46975bd1f123c010247a | span_id=5a4cf333230940a
-2025-05-13 17:33:14.379 | INFO     | app.domains.gateway.services.impl.file_upload_service:upload_file_and_metadata_file:29 - [Gateway] 파일 업로드 요청 시작: filename=1. CitrixWorkspaceApp_MAC_2107 (1).dmg, content_type=application/x-apple-diskimage
-2025-05-13 17:33:14.379 | INFO     | app.domains.gateway.services.impl.file_upload_service:upload_file_and_metadata_file:34 - [Gateway] 파일 크기: 252677436 bytes
-2025-05-13 17:33:14.379 | INFO     | app.domains.gateway.services.impl.file_upload_service:upload_file_and_metadata_file:40 - [Gateway] 메타데이터 파싱 시도: *test.json
-2025-05-13 17:33:14.379 | INFO     | app.domains.gateway.services.impl.file_upload_service:_parse_metadata_file:84 - [Gateway] 메타데이터 파일 파싱 시도: *test.json
-2025-05-13 17:33:14.380 | INFO     | app.domains.gateway.services.impl.file_upload_service:_parse_metadata_file:88 - [Gateway] 메타데이터 파일 파싱 성공: file_id='abc123' filename='test.png' owner='user1' size=12345 user=None
-2025-05-13 17:33:14.481 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:65 - [멀티파트 업로드 시작] 파일명=bd487649-e33b-4d60-9a9b-3d41d4ec6cae_1. CitrixWorkspaceApp_MAC_2107 (1).dmg, 전체용량=252677436 bytes, chunk=20971520 bytes
-2025-05-13 17:33:14.485 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 20971520/252677436 bytes (8%) part=1
-2025-05-13 17:33:14.489 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 41943040/252677436 bytes (16%) part=2
-2025-05-13 17:33:14.492 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 62914560/252677436 bytes (24%) part=3
-2025-05-13 17:33:14.495 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 83886080/252677436 bytes (33%) part=4
-2025-05-13 17:33:14.499 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 104857600/252677436 bytes (41%) part=5
-2025-05-13 17:33:14.503 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 125829120/252677436 bytes (49%) part=6
-2025-05-13 17:33:14.507 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 146800640/252677436 bytes (58%) part=7
-2025-05-13 17:33:14.513 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 167772160/252677436 bytes (66%) part=8
-2025-05-13 17:33:14.521 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 188743680/252677436 bytes (74%) part=9
-2025-05-13 17:33:14.527 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 209715200/252677436 bytes (82%) part=10
-2025-05-13 17:33:14.534 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 230686720/252677436 bytes (91%) part=11
-2025-05-13 17:33:14.540 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 251658240/252677436 bytes (99%) part=12
-2025-05-13 17:33:14.541 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:77 - [업로드 진행] 252677436/252677436 bytes (100%) part=13
-2025-05-13 17:33:14.546 | ERROR    | app.domains.gateway.services.impl.file_upload_service:upload_file_and_metadata_file:48 - [Gateway] 전체 업로드 실패: name 'KafkaMessageProducer' is not defined
-2025-05-13 17:33:14.546 | WARNING  | app.domains.log.services.common.sentry:capture_exception:31 - [Sentry fallback] SENTRY_DSN 미설정, 예외만 출력: name 'KafkaMessageProducer' is not defined
-2025-05-13 17:33:14.549 | ERROR    | app.domains.gateway.main:global_exception_handler:71 - [Global Exception Handler] POST http://localhost:8000/gateway/file/upload/file-meta/test - name 'KafkaMessageProducer' is not defined
-2025-05-13 17:33:22.418 | INFO     | app.common.logging:setup_logging:19 - Loguru logging is configured.
-2025-05-13 17:33:22.528 | INFO     | app.common.logging:setup_logging:19 - Loguru logging is configured.
-2025-05-13 17:33:22.536 | INFO     | app.common.logging:setup_logging:19 - Loguru logging is configured.
-2025-05-13 17:33:22.622 | INFO     | app.domains.gateway.main:on_startup:89 - Gateway service started.
-2025-05-13 17:33:22.622 | INFO     | app.domains.gateway.main:on_startup:90 - [gateway] AUTH_MODE=local
-2025-05-13 17:33:22.622 | INFO     | app.domains.gateway.main:on_startup:92 - [gateway] AUTH_LOCAL_TOKEN=dev-token
-2025-05-13 17:33:22.751 | INFO     | app.common.logging:setup_logging:19 - Loguru logging is configured.
-2025-05-13 17:33:23.711 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] GET /gateway/docs | path=http://localhost:8000/gateway/docs | trace_id=349f2f8f01c670c19ceec963411fb876 | span_id=366d7ea8f30b84ba
-2025-05-13 17:33:24.283 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] GET /gateway/openapi.json | path=http://localhost:8000/gateway/openapi.json | trace_id=3cf4fe66cc1f6770f857dea07ab36af9 | span_id=b401f703e412dc96
-2025-05-13 17:33:37.230 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] POST /gateway/file/upload/file-meta/test | path=http://localhost:8000/gateway/file/upload/file-meta/test | trace_id=98066ac251a9539f1d018d37765ae9ce | span_id=4c6cddf577663a7e
-2025-05-13 17:33:38.588 | INFO     | app.domains.gateway.services.impl.file_upload_service:upload_file_and_metadata_file:29 - [Gateway] 파일 업로드 요청 시작: filename=1. CitrixWorkspaceApp_MAC_2107 (1).dmg, content_type=application/x-apple-diskimage
-2025-05-13 17:33:38.588 | INFO     | app.domains.gateway.services.impl.file_upload_service:upload_file_and_metadata_file:34 - [Gateway] 파일 크기: 252677436 bytes
-2025-05-13 17:33:38.589 | INFO     | app.domains.gateway.services.impl.file_upload_service:upload_file_and_metadata_file:40 - [Gateway] 메타데이터 파싱 시도: *test.json
-2025-05-13 17:33:38.589 | INFO     | app.domains.gateway.services.impl.file_upload_service:_parse_metadata_file:84 - [Gateway] 메타데이터 파일 파싱 시도: *test.json
-2025-05-13 17:33:38.589 | INFO     | app.domains.gateway.services.impl.file_upload_service:_parse_metadata_file:88 - [Gateway] 메타데이터 파일 파싱 성공: file_id='abc123' filename='test.png' owner='user1' size=12345 user=None
-2025-05-13 17:33:38.694 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:66 - [멀티파트 업로드 시작] 파일명=02240171-2f72-43ba-84ee-f13b0844b66b_1. CitrixWorkspaceApp_MAC_2107 (1).dmg, 전체용량=252677436 bytes, chunk=20971520 bytes
-2025-05-13 17:33:38.697 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:78 - [업로드 진행] 20971520/252677436 bytes (8%) part=1
-2025-05-13 17:33:38.700 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:78 - [업로드 진행] 41943040/252677436 bytes (16%) part=2
-2025-05-13 17:33:38.702 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:78 - [업로드 진행] 62914560/252677436 bytes (24%) part=3
-2025-05-13 17:33:38.707 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:78 - [업로드 진행] 83886080/252677436 bytes (33%) part=4
-2025-05-13 17:33:38.718 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:78 - [업로드 진행] 104857600/252677436 bytes (41%) part=5
-2025-05-13 17:33:38.722 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:78 - [업로드 진행] 125829120/252677436 bytes (49%) part=6
-2025-05-13 17:33:38.725 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:78 - [업로드 진행] 146800640/252677436 bytes (58%) part=7
-2025-05-13 17:33:38.730 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:78 - [업로드 진행] 167772160/252677436 bytes (66%) part=8
-2025-05-13 17:33:38.736 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:78 - [업로드 진행] 188743680/252677436 bytes (74%) part=9
-2025-05-13 17:33:38.741 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:78 - [업로드 진행] 209715200/252677436 bytes (82%) part=10
-2025-05-13 17:33:38.745 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:78 - [업로드 진행] 230686720/252677436 bytes (91%) part=11
-2025-05-13 17:33:38.748 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:78 - [업로드 진행] 251658240/252677436 bytes (99%) part=12
-2025-05-13 17:33:38.748 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:78 - [업로드 진행] 252677436/252677436 bytes (100%) part=13
-2025-05-13 17:33:38.753 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:90 - [검수] 파일 02240171-2f72-43ba-84ee-f13b0844b66b_1. CitrixWorkspaceApp_MAC_2107 (1).dmg 업로드 후 무결성 검증 (dummy)
-2025-05-13 17:33:38.753 | INFO     | app.domains.file.services.impl.uploader_service:upload_file:91 - [멀티파트 업로드 완료] 파일명=02240171-2f72-43ba-84ee-f13b0844b66b_1. CitrixWorkspaceApp_MAC_2107 (1).dmg, 전체용량=252677436 bytes
-2025-05-13 17:33:38.758 | INFO     | app.domains.gateway.services.impl.file_upload_service:_upload_file_and_produce_metadata:193 - [Gateway] 파일 업로드 응답: {"filename": "02240171-2f72-43ba-84ee-f13b0844b66b_1. CitrixWorkspaceApp_MAC_2107 (1).dmg", "status": "uploaded", "location": "memory://filedepot-bucket/02240171-2f72-43ba-84ee-f13b0844b66b_1. CitrixWorkspaceApp_MAC_2107 (1).dmg", "error": "", "kafka_result": {"topic": "file_metadata", "status": "dummy"}}
-2025-05-13 17:33:38.786 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] POST /topics/test | path=http://localhost:8001/topics/test | trace_id=9d5800dd3ec7eabf5cf80a4e9235621d | span_id=70e39858b802516
-2025-05-13 17:33:38.787 | INFO     | app.domains.file.api.routes.routes:produce_metadata_to_kafka:119 - [FILE] /topics/test called with metadata: {'file_id': 'abc123', 'filename': 'test.png', 'owner': 'user1', 'size': 12345, 'user': None}
-2025-05-13 17:33:38.787 | INFO     | app.domains.file.api.routes.routes:produce_metadata_to_kafka:121 - [FILE] Kafka produce result: topic='test' message='{"file_id": "abc123", "filename": "test.png", "owner": "user1", "size": 12345, "user": null}' status='queued'
+2024-05-13T09:26:40 [INFO] gateway@via-gateway - Log aggregation test: gateway -> log pod (debug path print).
+2024-05-13T09:26:40 [INFO] gateway@via-gateway - Log aggregation test: gateway -> log pod (debug abspath).
+2025-05-13 19:05:31.214 | INFO     | app.common.logging:setup_logging:25 - Loguru logging is configured.
+2025-05-13 19:05:31.392 | INFO     | app.common.logging:setup_logging:25 - Loguru logging is configured.
+2025-05-13 19:05:31.399 | INFO     | app.common.logging:setup_logging:25 - Loguru logging is configured.
+2025-05-13 19:05:31.497 | INFO     | app.domains.gateway.main:on_startup:90 - Gateway service started.
+2025-05-13 19:05:31.497 | INFO     | app.domains.gateway.main:on_startup:91 - [gateway] AUTH_MODE=local
+2025-05-13 19:05:31.497 | INFO     | app.domains.gateway.main:on_startup:93 - [gateway] AUTH_LOCAL_TOKEN=dev-token
+2025-05-13 19:05:31.602 | INFO     | app.common.logging:setup_logging:25 - Loguru logging is configured.
+2025-05-13 19:05:37.184 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] POST /gateway/log/event | path=http://localhost:8000/gateway/log/event | trace_id=575b266319fbee7f3d51ab22ee36f4c | span_id=eb0e8344eb93d7fc
+2025-05-13 19:05:37.248 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] POST /event | path=http://localhost:8003/event | trace_id=76ed4df3713f3879eb27cef47de2ed0d | span_id=bc484a9b8a79fb6
+2025-05-13 19:06:58.872 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] POST /gateway/log/event | path=http://localhost:8000/gateway/log/event | trace_id=c040f578d4a723de4adbbfd7e368f681 | span_id=82758cce76d550d5
+2025-05-13 19:06:58.898 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] POST /event | path=http://localhost:8003/event | trace_id=dd0a692df0f5e202d3d0bc0d57d86aaf | span_id=195494563cabeef4
+2025-05-13 19:07:00.461 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] POST /event | path=http://localhost:8001/event | trace_id=ab4fef178020878f437514173dab4638 | span_id=a0093fbdd3d3c4e2
+2025-05-13 19:07:01.766 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] POST /event | path=http://localhost:8002/event | trace_id=bfc64c6bfc0e0b046eab24198f740b0 | span_id=35d29eb9d2d3b270
+2025-05-13 19:07:02.841 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] POST /event | path=http://localhost:8003/event | trace_id=906f3a57b1f7c480456932ad13ea7a29 | span_id=5ce9ca55aeef6e27
+2025-05-13 19:09:47.285 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] GET /gateway/docs | path=http://localhost:8000/gateway/docs | trace_id=b19de97d5824242777312108859b9a9a | span_id=7e3948d0e5939dc
+2025-05-13 19:09:47.631 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] GET /gateway/openapi.json | path=http://localhost:8000/gateway/openapi.json | trace_id=bf9c89478e777376d31ac3c6113e65d3 | span_id=ac7d11e0453aba85
+2025-05-13 19:09:47.635 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] GET /gateway/docs | path=http://localhost:8000/gateway/docs | trace_id=b76708b8195b3e10c57ccbc6b5baf841 | span_id=7015e737ec2c9c62
+2025-05-13 19:09:47.841 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] GET /gateway/docs | path=http://localhost:8000/gateway/docs | trace_id=d0ef53e11eeb28904bcd49f832f2d327 | span_id=b7fcd217c255b3ad
+2025-05-13 19:09:48.205 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] GET /gateway/openapi.json | path=http://localhost:8000/gateway/openapi.json | trace_id=7c569f99d233e2cb39a56965ff4483d3 | span_id=ed8bacdd165f0646
+2025-05-13 19:27:58.227 | INFO     | app.common.logging:setup_logging:25 - Loguru logging is configured.
+2025-05-13 19:27:58.313 | INFO     | app.common.logging:setup_logging:25 - Loguru logging is configured.
+2025-05-13 19:27:58.681 | INFO     | app.domains.gateway.main:on_startup:110 - Gateway service started.
+2025-05-13 19:27:58.681 | INFO     | app.domains.gateway.main:on_startup:111 - [gateway] AUTH_MODE=local
+2025-05-13 19:27:58.681 | INFO     | app.domains.gateway.main:on_startup:113 - [gateway] AUTH_LOCAL_TOKEN=dev-token
+2025-05-13 19:28:29.878 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] GET /gateway/health | path=http://localhost:8000/gateway/health | trace_id=5a503615df9ff77dea845175ad0bf9fc | span_id=210d12c967466471
+2025-05-13 19:28:29.900 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] POST /event | path=http://localhost:8003/event | trace_id=2bb0923cfbf7a65a1edc4fcac68ee377 | span_id=b20108edf9a50ef2
+2025-05-13 19:28:37.011 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] GET /gateway/docs | path=http://localhost:8000/gateway/docs | trace_id=76c01267b0e12c53637b7171c4f11875 | span_id=2635b00448030b6d
+2025-05-13 19:28:37.014 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] POST /event | path=http://localhost:8003/event | trace_id=2dd782c38aec9af93a27308274d5575a | span_id=d3f2132e888bbd40
+2025-05-13 19:28:43.866 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] GET /gateway/data/topics | path=http://localhost:8000/gateway/data/topics | trace_id=93a220a0061f0e41f26899268c680a33 | span_id=9108220621bc7479
+2025-05-13 19:28:44.575 | INFO     | app.domains.log.services.common.middleware:dispatch:21 - [access] POST /event | path=http://localhost:8003/event | trace_id=3e49c254b473bd18aae53027999b6490 | span_id=7dca5c8b29c2935c
