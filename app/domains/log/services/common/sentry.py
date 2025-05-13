@@ -1,3 +1,8 @@
+"""
+WHAT: 로그 서비스 Sentry 연동 유틸리티
+WHY: 장애/예외 상황 실시간 모니터링, 외부 Sentry 대시보드 연동
+EXAMPLE: init_sentry(dsn, environment), capture_exception(exc)
+"""
 import os
 import sentry_sdk
 
@@ -9,6 +14,11 @@ _sentry_inited = False
 from app.common.logging import logger
 
 def init_sentry(dsn: str = None, environment: str = None):
+    """
+    WHAT: Sentry SDK 초기화
+    WHY: DSN/환경별로 Sentry 연동, 장애/예외 실시간 추적
+    EXAMPLE: init_sentry(dsn, environment)
+    """
     global _sentry_inited
     dsn = dsn or _sentry_dsn
     environment = environment or _sentry_env
@@ -27,6 +37,11 @@ def init_sentry(dsn: str = None, environment: str = None):
             logger.warning(f"[Sentry fallback] sentry init failed: {e}")
 
 def capture_exception(exc: Exception):
+    """
+    WHAT: Sentry로 예외 전송
+    WHY: 장애/예외 상황 대시보드 집계, 실시간 알림
+    EXAMPLE: capture_exception(Exception("test"))
+    """
     if not _sentry_dsn:
         logger.warning(f"[Sentry fallback] SENTRY_DSN 미설정, 예외만 출력: {exc}")
         return

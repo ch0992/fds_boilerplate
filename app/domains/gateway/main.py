@@ -7,6 +7,8 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
 from app.common.logging import logger, setup_logging
+from app.common.utils.log_sender import send_log_async
+from fastapi import Request
 
 # loguru 기반 로깅 설정
 setup_logging()
@@ -41,6 +43,25 @@ app = FastAPI(
     docs_url="/gateway/docs",
     redoc_url="/gateway/redoc"
 )
+
+# 모든 HTTP 요청마다 log 전송 미들웨어 추가
+
+
+@app.middleware("http")
+async def log_http_requests(request: Request, call_next):
+    response = await call_next(request)
+    try:
+        host = request.url.hostname or "unknown"
+        domain = request.url.path.strip("/").split("/")[0] if request.url.path.strip("/") else "unknown"
+        send_log_async(
+            message=f"{request.method} {request.url.path} {response.status_code}",
+            level="INFO",
+            extra={"domain": domain, "host": host}
+        )
+    except Exception:
+        pass
+    return response
+
 
 # OpenTelemetry 및 Sentry 초기화 (ENV에 따라 분기)
 if settings.ENV in ["production", "stage"]:

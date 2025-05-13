@@ -16,14 +16,16 @@ class MinioMemoryClient(MinioClientInterface):
     """
     Minio S3 연동 메모리 클라이언트 구현체 (테스트/로컬)
 
-    테스트/로컬/개발 환경에서만 사용하는 in-memory S3 mock 구현체
+    WHAT: 실제 S3 대신 메모리 내에 객체를 저장하는 mock 클라이언트
+    WHY: 테스트/로컬/개발 환경에서 외부 S3 연동 없이 파일 업로드 로직 검증 가능
     """
 
     def __init__(self):
         """
         MinioMemoryClient 초기화
 
-        메모리 내 객체 저장을 위한 초기화
+        WHAT: 메모리 내 객체 저장소 생성
+        WHY: 실제 S3가 없으므로 dict로 버킷/파일 관리
         """
         # WHY: 메모리 내 객체 저장을 위한 초기화
         self.storage = {}
@@ -40,14 +42,20 @@ class MinioMemoryClient(MinioClientInterface):
         Returns:
             str: 업로드 결과 (메모리 내 객체 경로)
         """
-        # WHY: 버킷이 존재하지 않을 경우 생성
+        # WHAT: 버킷이 없으면 새로 생성 (dict)
+        # WHY: S3와 동일하게 버킷 단위로 객체 관리
         if bucket not in self.storage:
             self.storage[bucket] = {}
-        # WHY: 파일 데이터를 메모리 내 객체 저장
+        # WHAT: 파일 데이터를 메모리 내 객체로 저장
         self.storage[bucket][key] = data
+        # WHAT: 업로드 결과를 S3 URI와 유사하게 반환
         return f"memory://{bucket}/{key}"
 
     def multipart_upload(self, file_path: str, bucket: str, key: str, chunk_size: int = 20*1024*1024) -> str:
+        # WHAT: 멀티파트 업로드 시뮬레이션 (실제 S3 multipart upload와 인터페이스만 동일)
+        # WHY: 대용량 파일 업로드 테스트용 (실제 S3 연동 X)
+        # WARNING: 파일을 chunk 단위로 메모리에 저장하므로 대용량 파일은 메모리 사용량 주의
+        return self.upload_file(bucket, key, open(file_path, 'rb').read())
         with open(file_path, "rb") as f:
             data = f.read()
         return self.upload_file(bucket, key, data)

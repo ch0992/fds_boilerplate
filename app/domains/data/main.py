@@ -11,6 +11,7 @@ from app.domains.log.services.common.tracing import init_tracer
 from app.domains.log.services.common.middleware import install_exception_handlers, TraceLoggingMiddleware
 from app.common.config import settings
 from app.domains.log.services.common.sentry import init_sentry
+from app.common.remote_log_handler import RemoteLogHandler
 
 # loguru 기반 로깅 설정
 setup_logging()
@@ -21,6 +22,25 @@ ENV_PATH = os.path.join(BASE_DIR, '.env')
 load_dotenv(ENV_PATH, override=True)
 
 app = FastAPI(title="Data Service", description="Meta info & SQL microservice")
+
+from fastapi import Request
+from app.common.utils.log_sender import send_log_async
+
+@app.middleware("http")
+async def log_http_requests(request: Request, call_next):
+    response = await call_next(request)
+    try:
+        host = request.url.hostname or "unknown"
+        domain = request.url.path.strip("/").split("/")[0] if request.url.path.strip("/") else "unknown"
+        send_log_async(
+            message=f"{request.method} {request.url.path} {response.status_code}",
+            level="INFO",
+            extra={"domain": domain, "host": host}
+        )
+    except Exception:
+        pass
+    return response
+
 
 # OpenTelemetry 및 Sentry 초기화 (ENV에 따라 분기)
 if settings.ENV in ["production", "stage"]:

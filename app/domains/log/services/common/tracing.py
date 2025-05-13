@@ -1,3 +1,8 @@
+"""
+WHAT: 로그 서비스 트레이싱/분산추적 유틸리티
+WHY: OTEL, Jaeger, Tempo 등 다양한 트레이싱 백엔드 연동 및 초기화
+EXAMPLE: init_tracer("jaeger"), get_tracer("log-service")
+"""
 import os
 import logging
 from app.common.logging import logger
@@ -19,6 +24,11 @@ _service_name = os.getenv("SERVICE_NAME", "filedepot-service")
 _tracer_provider = None
 
 def init_tracer(exporter_type: Optional[str] = None):
+    """
+    WHAT: 서비스별 트레이싱(OTEL 등) 초기화
+    WHY: Jaeger/Tempo/콘솔 등 다양한 백엔드 지원, trace_id/분산추적 활성화
+    EXAMPLE: init_tracer("jaeger")
+    """
     global _tracer_provider
     try:
         exporter_type = (exporter_type or _otel_exporter or "stdout").lower()
@@ -53,6 +63,11 @@ except Exception as e:
     logger.warning(f"[Tracing fallback] global tracer init failed: {e}")
 
 def get_tracer(service_name: Optional[str] = None):
+    """
+    WHAT: 현재 서비스용 tracer 객체 반환
+    WHY: trace_id/ span_id 추적, 로그/미들웨어와 연동
+    EXAMPLE: tracer = get_tracer("log-service")
+    """
     try:
         tracer_provider = trace.get_tracer_provider()
         tracer = tracer_provider.get_tracer(service_name or _service_name)

@@ -10,9 +10,13 @@ from app.common.config import settings
 
 def get_auth_mode() -> str:
     """
-    안전하게 AUTH_MODE를 가져오며, 없거나 예외 발생 시 'local'을 반환합니다.
+    WHAT: 현재 인증 모드(AUTH_MODE) 반환 함수
+    WHY: 환경별(로컬/운영 등) 인증 정책 분기, 예외/미설정 시 안전하게 'local' fallback
     """
     try:
+        # WHAT: settings 객체에서 AUTH_MODE를 안전하게 추출
+        # WHY: 환경변수 미설정/오류 시에도 항상 'local'로 동작 보장
         return getattr(settings, "AUTH_MODE", "local") or "local"
     except Exception:
+        # WARNING: settings 객체 접근 오류 등 비정상 상황에서도 무조건 'local' 반환
         return "local"

@@ -1,0 +1,6 @@
+2024-05-13T09:26:40 [INFO] gateway@via-gateway - Log aggregation test: gateway -> log pod (env absolute path, after restart).
+2024-05-13T09:26:41 [INFO] gateway@via-gateway - [gateway] log test 1
+2024-05-13T09:26:44 [DEBUG] log@log-service - [log] log test 4
+2025-05-13T10:28:29.881436 [INFO] gateway@localhost - GET /gateway/health 404
+2025-05-13T10:28:37.012416 [INFO] gateway@localhost - GET /gateway/docs 200
+2025-05-13T10:28:44.572201 [INFO] gateway@localhost - GET /gateway/data/topics 500
